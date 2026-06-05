@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { CheckCircle2, Zap, ShieldCheck, ClipboardList, SunMedium, BarChart3 } from 'lucide-react';
+import FaqAccordion from '@/components/FaqAccordion';
 
 export const metadata: Metadata = {
-  title: 'Photovoltaik Hamburg – PV-Anlagen & Solarmodule',
+  title: 'Photovoltaik Hamburg – PV-Anlage kaufen & installieren | A3-Watt',
   description:
-    'Professionelle Photovoltaik-Anlagen in Hamburg. Hochwertige Solarmodule, Heimspeicher und Energiemanagementsysteme aus einer Hand.',
+    'Photovoltaikanlage in Hamburg kaufen & installieren lassen. A3-Watt Elektrotechnik – Festpreisangebote ab 11.460 €, Netzanmeldung inklusive, 30 Jahre Modulgarantie.',
 };
 
 const faqItems = [
@@ -31,33 +33,6 @@ const faqItems = [
   },
 ];
 
-const modules = [
-  {
-    title: 'PV-Solarmodule',
-    subtitle: '480 W Doppelglas',
-    desc: 'Rückseitenkontakt-Doppelglas-Module mit einem Modulwirkungsgrad von bis zu 23,8 %. Ästhetisches Vollschwarz-Design, verbesserte Verschattungstoleranz und 30 Jahre Garantie.',
-    highlights: ['Wirkungsgrad bis 23,8 %', 'Doppelglas-Technologie', '30 Jahre Garantie', 'Vollschwarz-Design'],
-  },
-  {
-    title: 'Heimspeicher',
-    subtitle: 'Lithium-Eisenphosphat',
-    desc: 'Hochwertige Batteriespeicher für maximale Eigenverbrauchsoptimierung. Skalierbar für jede Haushaltsgröße, langlebig und sicher durch LiFePO₄-Technologie.',
-    highlights: ['LiFePO₄-Technologie', 'Skalierbar', 'Netzunabhängigkeit', 'Eigenverbrauch optimieren'],
-  },
-  {
-    title: 'Energiemanagement',
-    subtitle: 'Smart Control',
-    desc: 'Intelligente Vernetzung Ihrer Energiegeräte: Strom selbst produzieren, speichern und optimal verbrauchen. Steuerung per App rund um die Uhr.',
-    highlights: ['App-Steuerung', 'Echtzeitmonitoring', 'Gerätevernetzung', 'KI-gestützte Optimierung'],
-  },
-  {
-    title: 'Wallbox',
-    subtitle: '22 kW Ladestation',
-    desc: 'Bidirektionale 22-kW-Wallbox für Ihr Elektrofahrzeug. Lädt mit überschüssigem Solarstrom und ist RFID/NFC-aktivierbar.',
-    highlights: ['22 kW Ladeleistung', 'Solar-optimiertes Laden', 'Bidirektional', 'RFID/NFC'],
-  },
-];
-
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -68,6 +43,17 @@ const faqJsonLd = {
   })),
 };
 
+const included = [
+  { icon: <ClipboardList className="w-5 h-5" />, label: 'Kostenlose Beratung & Planung' },
+  { icon: <SunMedium className="w-5 h-5" />, label: 'Dachmontage & Elektroinstallation' },
+  { icon: <CheckCircle2 className="w-5 h-5" />, label: 'Netzanmeldung beim Netzbetreiber' },
+  { icon: <CheckCircle2 className="w-5 h-5" />, label: 'Anmeldung beim Finanzamt' },
+  { icon: <Zap className="w-5 h-5" />, label: 'Inbetriebnahme & persönliche Einweisung' },
+  { icon: <BarChart3 className="w-5 h-5" />, label: 'App-Monitoring & Ertragsüberwachung' },
+  { icon: <ShieldCheck className="w-5 h-5" />, label: '30 Jahre Produktgarantie auf Module' },
+  { icon: <ShieldCheck className="w-5 h-5" />, label: 'Versicherter Installationsbetrieb' },
+];
+
 export default function PhotovoltaikPage() {
   return (
     <>
@@ -75,140 +61,182 @@ export default function PhotovoltaikPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <span className="inline-block bg-brand-500/20 text-brand-300 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
-              Photovoltaik
+
+      {/* ── Hero ──────────────────────────────────────────────────────────── */}
+      <section className="relative overflow-hidden text-white py-24 md:py-32">
+        <Image
+          src="/images/photovoltaik-hero.jpg"
+          alt="Photovoltaikanlage auf Hamburger Wohnhaus"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(10,18,40,0.88) 0%, rgba(10,18,40,0.55) 60%, rgba(10,18,40,0.20) 100%)' }} />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <span className="inline-block bg-white/10 text-white/80 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm border border-white/20">
+              A3-Watt Elektrotechnik · Hamburg & Umgebung
             </span>
-            <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-              Strom selbst produzieren
+            <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight">
+              Photovoltaik
             </h1>
-            <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-              Mit einer modernen Photovoltaikanlage erzeugen Sie Ihren eigenen Strom –
-              umweltfreundlich, kosteneffizient und unabhängig.
+            <p className="text-xl text-white/75 mb-4 leading-relaxed">
+              Solaranlage kaufen, installieren & in Betrieb nehmen — alles aus einer Hand.
             </p>
-            <Link href="/kontakt" className="btn-primary text-base">
-              Unverbindlich beraten lassen
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Intro */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="section-title">Das integrierte Energiesystem</h2>
-            <p className="text-slate-600 leading-relaxed">
-              Wir bieten Ihnen ein vollständig integriertes Energiesystem: Strom selbst produzieren,
-              Energie speichern, Energiegeräte vernetzen und Kosten dauerhaft senken.
-              Alle Komponenten sind perfekt aufeinander abgestimmt.
+            <p className="text-base text-white/55 mb-10 leading-relaxed max-w-xl">
+              Als Elektroinstallationsbetrieb planen und montieren wir Ihre PV-Anlage in Hamburg, Ratzeburg
+              und dem gesamten norddeutschen Raum. Festpreise, keine Überraschungen.
             </p>
+            <div className="flex flex-wrap gap-4">
+              <Link href="/kontakt" className="btn-primary text-base">
+                Kostenloses Angebot anfordern
+              </Link>
+              <Link href="/solarcheck"
+                className="inline-block font-semibold px-7 py-3 rounded-xl text-base text-white transition-all duration-200"
+                style={{ background: 'rgba(255,255,255,0.10)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.20)' }}
+              >
+                Solarcheck starten
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Products */}
-      <section className="py-16 bg-slate-50">
+      {/* ── Zahlen & Fakten ───────────────────────────────────────────────── */}
+      <section className="py-14 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="section-title text-center mb-12">Unsere Komponenten</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {modules.map((m) => (
-              <div key={m.title} className="card hover:shadow-lg transition-shadow">
-                <div className="mb-4">
-                  <span className="text-xs font-semibold text-brand-600 bg-brand-50 px-3 py-1 rounded-full">
-                    {m.subtitle}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{m.title}</h3>
-                <p className="text-slate-600 leading-relaxed mb-4">{m.desc}</p>
-                <ul className="grid grid-cols-2 gap-2">
-                  {m.highlights.map((h) => (
-                    <li key={h} className="flex items-center gap-2 text-sm text-slate-700">
-                      <span className="w-1.5 h-1.5 rounded-full bg-brand-500 shrink-0" />
-                      {h}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Project gallery placeholder */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="section-title text-center mb-4">Unsere Projekte</h2>
-          <p className="text-center text-slate-600 mb-10">
-            Eine Auswahl realisierter Photovoltaikanlagen aus Hamburg und Umgebung.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              '/images/solar-install-1.jpg',
-              '/images/solar-install-2.jpg',
-              '/images/solarmodul.jpg',
-              '/images/solar-install-1.jpg',
-              '/images/solar-install-2.jpg',
-              '/images/wechselrichter.jpg',
-              '/images/speicher.jpg',
-              '/images/solar-install-1.jpg',
-            ].map((src, i) => (
-              <div key={i} className="aspect-square relative rounded-xl overflow-hidden">
-                <Image
-                  src={src}
-                  alt={`Projekt ${i + 1}`}
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-500"
-                />
+              { value: '700+', label: 'realisierte Anlagen' },
+              { value: 'ab 11.460 €', label: 'Festpreis inkl. MwSt.' },
+              { value: '8–12 J.', label: 'Amortisationszeit' },
+              { value: '30 Jahre', label: 'Modulgarantie' },
+            ].map((s) => (
+              <div key={s.label}>
+                <div className="text-3xl font-black mb-1" style={{ color: '#3B7DD8' }}>{s.value}</div>
+                <div className="text-sm text-slate-500">{s.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Energy community */}
-      <section className="py-16 bg-slate-50">
+      {/* ── Warum PV in Hamburg ───────────────────────────────────────────── */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="section-title">Energiegemeinschaft</h2>
-            <p className="text-slate-600 leading-relaxed mb-6">
-              Teilen Sie überschüssigen Solarstrom mit Nachbarn und profitieren Sie
-              gemeinsam. Durch vernetzte Energiegemeinschaften holen Sie das Maximum
-              aus Ihrer Anlage heraus.
+          <div className="grid md:grid-cols-2 gap-14 items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#3B7DD8' }}>
+                Photovoltaik Hamburg
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-5" style={{ color: '#1E293B' }}>
+                Warum jetzt der richtige Zeitpunkt ist
+              </h2>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                Der Strompreis in Deutschland liegt aktuell bei über 30 Cent pro Kilowattstunde — Tendenz steigend.
+                Mit einer eigenen Photovoltaikanlage erzeugen Sie Ihren Strom selbst und schützen sich dauerhaft
+                vor steigenden Energiekosten.
+              </p>
+              <p className="text-slate-600 leading-relaxed mb-6">
+                Hamburg und der norddeutsche Raum bieten mit rund 950–1.050 kWh/m² Jahreseinstrahlung
+                ideale Bedingungen für eine wirtschaftliche PV-Anlage. Auch bewölkte Tage reduzieren den
+                Ertrag moderner Module kaum — die Technologie ist längst ausgereift.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  'Bis zu 80 % Eigenverbrauch mit Heimspeicher',
+                  'Einspeisevergütung für überschüssigen Strom',
+                  'Unabhängigkeit von Energieversorgern',
+                  'Wertsteigerung Ihrer Immobilie',
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-sm text-slate-700">
+                    <CheckCircle2 className="w-4 h-4 shrink-0" style={{ color: '#3B7DD8' }} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="relative h-[420px] rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/pv-installation.jpg"
+                alt="Photovoltaik Installation Hamburg"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Leistungsumfang ───────────────────────────────────────────────── */}
+      <section className="py-20" style={{ background: '#F5F8FC' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#3B7DD8' }}>
+              Rundum-Sorglos
+            </p>
+            <h2 className="text-3xl font-bold" style={{ color: '#1E293B' }}>
+              Was bei uns immer inklusive ist
+            </h2>
+            <p className="mt-3 text-slate-500 max-w-xl mx-auto">
+              Wir übernehmen jeden Schritt — von der ersten Beratung bis zur finalen Inbetriebnahme.
+              Kein Aufwand für Sie.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-16 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="section-title text-center mb-10">Häufige Fragen</h2>
-          <div className="max-w-3xl mx-auto space-y-4">
-            {faqItems.map((item) => (
-              <div key={item.q} className="card">
-                <h3 className="font-bold text-slate-900 mb-2">{item.q}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{item.a}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {included.map((item) => (
+              <div
+                key={item.label}
+                className="flex items-center gap-4 rounded-xl px-5 py-4 bg-white border border-slate-100 shadow-sm"
+              >
+                <span className="shrink-0" style={{ color: '#3B7DD8' }}>{item.icon}</span>
+                <span className="text-sm font-medium text-slate-700">{item.label}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-brand-500 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Jetzt Ihre PV-Anlage planen</h2>
-          <p className="text-brand-100 mb-8">
-            Lassen Sie sich kostenlos und unverbindlich beraten. Wir erarbeiten ein
-            maßgeschneidertes Konzept für Ihr Dach.
+      {/* ── FAQ ───────────────────────────────────────────────────────────── */}
+      <section className="py-20" style={{ background: '#F5F8FC' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold" style={{ color: '#1E293B' }}>Häufige Fragen zur PV-Anlage</h2>
+          </div>
+          <FaqAccordion items={faqItems} />
+        </div>
+      </section>
+
+      {/* ── CTA ───────────────────────────────────────────────────────────── */}
+      <section
+        className="relative overflow-hidden py-24"
+        style={{ background: 'linear-gradient(135deg, #3B7DD8 0%, #2D68C4 60%, #3B7DD8 100%)' }}
+      >
+        <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(ellipse at 30% 30%, rgba(255,255,255,0.15) 0%, transparent 55%)' }} />
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+            Jetzt Ihre PV-Anlage in Hamburg planen
+          </h2>
+          <p className="text-lg mb-10 max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.75)' }}>
+            Kostenlose Beratung, transparenter Festpreis und ein persönlicher Ansprechpartner
+            von der Planung bis zur Inbetriebnahme.
           </p>
-          <Link href="/kontakt" className="inline-block bg-white text-brand-600 font-semibold px-8 py-3 rounded-lg hover:bg-brand-50 transition-colors">
-            Beratungsgespräch anfragen
-          </Link>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/kontakt"
+              className="inline-block font-bold px-9 py-4 rounded-xl transition-all duration-200"
+              style={{ background: 'rgba(255,255,255,0.95)', color: '#2D68C4', boxShadow: '0 4px 24px rgba(0,0,0,0.12)' }}
+            >
+              Beratungsgespräch anfragen
+            </Link>
+            <a
+              href="tel:+4917684412063"
+              className="inline-flex items-center gap-2 font-bold px-9 py-4 rounded-xl transition-all duration-200 text-white"
+              style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.35)' }}
+            >
+              0176 844 12063
+            </a>
+          </div>
         </div>
       </section>
     </>

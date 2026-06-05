@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Zap, Lock, Phone } from 'lucide-react';
+import FaqAccordion from '@/components/FaqAccordion';
 
 export const metadata: Metadata = {
   title: 'Kostenloser Solarcheck – Potenzial Ihres Dachs ermitteln',
@@ -166,14 +167,7 @@ export default function SolarcheckPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="section-title text-center mb-10">Häufige Fragen</h2>
-          <div className="max-w-3xl mx-auto space-y-4">
-            {faqItems.map((item) => (
-              <div key={item.q} className="card">
-                <h3 className="font-bold text-slate-900 mb-2">{item.q}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{item.a}</p>
-              </div>
-            ))}
-          </div>
+          <FaqAccordion items={faqItems} />
         </div>
       </section>
 

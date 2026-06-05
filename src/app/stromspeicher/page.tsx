@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { BatteryCharging } from 'lucide-react';
+import FaqAccordion from '@/components/FaqAccordion';
 
 export const metadata: Metadata = {
   title: 'Stromspeicher – Batteriespeicher für Ihre PV-Anlage',
@@ -124,7 +125,7 @@ export default function StromspeicherPage() {
                   src="/images/speicher.jpg"
                   alt="SunGrow Batteriespeicher"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
               <div className="p-8">
@@ -199,14 +200,7 @@ export default function StromspeicherPage() {
       <section className="py-16 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="section-title text-center mb-10">Häufige Fragen</h2>
-          <div className="max-w-3xl mx-auto space-y-4">
-            {faqItems.map((item) => (
-              <div key={item.q} className="card">
-                <h3 className="font-bold text-slate-900 mb-2">{item.q}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{item.a}</p>
-              </div>
-            ))}
-          </div>
+          <FaqAccordion items={faqItems} />
         </div>
       </section>
 
