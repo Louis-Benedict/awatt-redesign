@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Impressum',
+  title: 'Impressum | A3-Watt Elektrotechnik',
   description: 'Impressum und rechtliche Angaben von pv-hh.de',
 };
 
@@ -13,39 +13,33 @@ export default function ImpressumPage() {
       <section className="mb-8">
         <h2 className="text-xl font-bold text-slate-800 mb-4">Angaben gemäß § 5 TMG</h2>
         <div className="text-slate-600 space-y-1">
-          <p className="font-semibold text-slate-900">[Firmenname]</p>
-          <p>[Straße und Hausnummer]</p>
-          <p>[PLZ] Hamburg</p>
-        </div>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-xl font-bold text-slate-800 mb-4">Kontakt</h2>
-        <div className="text-slate-600 space-y-1">
-          <p>Telefon: 040 - XXXX XXXX</p>
-          <p>E-Mail: info@pv-hh.de</p>
+          <p className="font-semibold text-slate-900">A3-Watt Elektrotechnik</p>
+          <p>Stintenburger Weg 1</p>
+          <p>23909 Ratzeburg</p>
         </div>
       </section>
 
       <section className="mb-8">
         <h2 className="text-xl font-bold text-slate-800 mb-4">Vertreten durch</h2>
-        <p className="text-slate-600">[Name des Geschäftsführers]</p>
+        <p className="text-slate-600">Ahmad Awat Ahmad</p>
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-bold text-slate-800 mb-4">Registereintrag</h2>
+        <h2 className="text-xl font-bold text-slate-800 mb-4">Kontakt</h2>
         <div className="text-slate-600 space-y-1">
-          <p>Eingetragen im Handelsregister</p>
-          <p>Registergericht: Amtsgericht Hamburg</p>
-          <p>Registernummer: [HRB XXXXX]</p>
+          <p>
+            Telefon:{' '}
+            <a href="tel:+4917684412063" className="hover:text-brand-600 transition-colors">
+              0176 844 12063
+            </a>
+          </p>
+          <p>
+            E-Mail:{' '}
+            <a href="mailto:anfrage@pv-hh.de" className="hover:text-brand-600 transition-colors">
+              anfrage@pv-hh.de
+            </a>
+          </p>
         </div>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-xl font-bold text-slate-800 mb-4">Umsatzsteuer-ID</h2>
-        <p className="text-slate-600">
-          Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: DE[XXXXXXXXX]
-        </p>
       </section>
 
       <section className="mb-8">
@@ -53,9 +47,9 @@ export default function ImpressumPage() {
           Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
         </h2>
         <div className="text-slate-600 space-y-1">
-          <p>[Name]</p>
-          <p>[Adresse]</p>
-          <p>Hamburg</p>
+          <p>Ahmad Awat Ahmad</p>
+          <p>Stintenburger Weg 1</p>
+          <p>23909 Ratzeburg</p>
         </div>
       </section>
 

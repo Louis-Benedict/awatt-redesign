@@ -15,7 +15,7 @@ export default function Footer() {
                 alt="PV Hamburg"
                 width={64}
                 height={64}
-                className="h-14 w-auto brightness-0 invert opacity-80"
+                className="h-14 w-auto"
               />
             </div>
             <p className="text-sm leading-relaxed" style={{ color: '#64748B' }}>
@@ -83,20 +83,20 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li>
                 <a
-                  href="tel:+4940XXXXXXXX"
+                  href="tel:+4917684412063"
                   className="transition-colors hover:text-brand-400"
                   style={{ color: '#64748B' }}
                 >
-                  040 – XXXX XXXX
+                  0176 844 12063
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@pv-hh.de"
+                  href="mailto:anfrage@pv-hh.de"
                   className="transition-colors hover:text-brand-400"
                   style={{ color: '#64748B' }}
                 >
-                  info@pv-hh.de
+                  anfrage@pv-hh.de
                 </a>
               </li>
               <li style={{ color: '#64748B' }}>Hamburg &amp; Umgebung</li>
@@ -120,7 +120,7 @@ export default function Footer() {
           className="mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs"
           style={{ borderTop: '1px solid rgba(255,255,255,0.06)', color: '#475569' }}
         >
-          <p>© {new Date().getFullYear()} PV-Hamburg — Alle Rechte vorbehalten</p>
+          <p>© {new Date().getFullYear()} A3-Watt Elektrotechnik — Alle Rechte vorbehalten</p>
           <div className="flex gap-6">
             <Link href="/impressum" className="hover:text-brand-400 transition-colors">Impressum</Link>
             <Link href="/datenschutz" className="hover:text-brand-400 transition-colors">Datenschutz</Link>

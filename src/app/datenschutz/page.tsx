@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Datenschutzerklärung',
+  title: 'Datenschutzerklärung | A3-Watt Elektrotechnik',
   description: 'Datenschutzerklärung von pv-hh.de gemäß DSGVO.',
 };
 
@@ -9,7 +9,7 @@ export default function DatenschutzPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <h1 className="text-3xl font-bold text-slate-900 mb-2">Datenschutzerklärung</h1>
-      <p className="text-slate-500 text-sm mb-8">Stand: [Datum]</p>
+      <p className="text-slate-500 text-sm mb-8">Stand: Juni 2026</p>
 
       <div className="space-y-10 text-sm text-slate-600 leading-relaxed">
         <section>
@@ -19,10 +19,22 @@ export default function DatenschutzPage() {
             EU-Datenschutzgrundverordnung (DSGVO), ist:
           </p>
           <div className="mt-2 space-y-0.5">
-            <p className="font-medium text-slate-800">[Firmenname]</p>
-            <p>[Adresse]</p>
-            <p>Hamburg</p>
-            <p>E-Mail: info@pv-hh.de</p>
+            <p className="font-medium text-slate-800">A3-Watt Elektrotechnik</p>
+            <p>Ahmad Awat Ahmad</p>
+            <p>Stintenburger Weg 1</p>
+            <p>23909 Ratzeburg</p>
+            <p>
+              Telefon:{' '}
+              <a href="tel:+4917684412063" className="hover:text-brand-600 transition-colors">
+                0176 844 12063
+              </a>
+            </p>
+            <p>
+              E-Mail:{' '}
+              <a href="mailto:anfrage@pv-hh.de" className="hover:text-brand-600 transition-colors">
+                anfrage@pv-hh.de
+              </a>
+            </p>
           </div>
         </section>
 
@@ -99,7 +111,7 @@ export default function DatenschutzPage() {
         <section>
           <h2 className="text-xl font-bold text-slate-800 mb-3">7. Aktualität und Änderung dieser Datenschutzerklärung</h2>
           <p>
-            Diese Datenschutzerklärung ist aktuell gültig und hat den Stand [Datum].
+            Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Juni 2026.
             Durch die Weiterentwicklung unserer Website und Angebote oder aufgrund
             geänderter gesetzlicher beziehungsweise behördlicher Vorgaben kann es
             notwendig werden, diese Datenschutzerklärung zu ändern.

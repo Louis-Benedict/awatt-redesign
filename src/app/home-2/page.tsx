@@ -44,10 +44,10 @@ const pakete = [
 ];
 
 const trustBadges = [
-  { icon: <ShieldCheck    className="w-6 h-6" />, title: '100 % Versichert',   desc: 'Alle unsere Projekte & Kunden erfahren den PV-Hamburg Super-Schutz.' },
-  { icon: <Zap            className="w-6 h-6" />, title: 'Unabhängigkeit',     desc: 'Echte Unabhängigkeit von Energieanbietern und steigenden Strompreisen.' },
-  { icon: <ClipboardList  className="w-6 h-6" />, title: 'Anmeldung inklusive', desc: 'Wir kümmern uns vollständig um die Anmeldung Ihrer Photovoltaik-Anlage.' },
-  { icon: <BadgeCheck     className="w-6 h-6" />, title: 'Made in Germany',    desc: 'Unsere Produkte und unsere Arbeit sind Made in Germany.' },
+  { icon: <ShieldCheck className="w-6 h-6" />, title: '100 % Versichert', desc: 'Alle unsere Projekte & Kunden erfahren den PV-Hamburg Super-Schutz.' },
+  { icon: <Zap className="w-6 h-6" />, title: 'Unabhängigkeit', desc: 'Echte Unabhängigkeit von Energieanbietern und steigenden Strompreisen.' },
+  { icon: <ClipboardList className="w-6 h-6" />, title: 'Anmeldung inklusive', desc: 'Wir kümmern uns vollständig um die Anmeldung Ihrer Photovoltaik-Anlage.' },
+  { icon: <BadgeCheck className="w-6 h-6" />, title: 'Made in Germany', desc: 'Unsere Produkte und unsere Arbeit sind Made in Germany.' },
 ];
 
 
@@ -68,104 +68,81 @@ export default function Home2Page() {
     <>
       {/* ── Hero card ─────────────────────────────────────────────────────── */}
       <div className="px-3 sm:px-5 pt-4 pb-0" style={{ background: '#F5F8FC' }}>
-      <section
-        className="relative overflow-hidden flex items-center rounded-2xl"
-        style={{ minHeight: '82vh' }}
-      >
-        {/* Background video */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          src="https://video.wixstatic.com/video/b34a89_c42f8363f5c14beeb0c9e57dd8826f73/720p/mp4/file.mp4"
-          poster="https://static.wixstatic.com/media/b34a89_c42f8363f5c14beeb0c9e57dd8826f73f000.jpg"
-        />
+        <section
+          className="relative overflow-hidden flex items-center rounded-2xl"
+          style={{ minHeight: '70vh' }}
+        >
+          {/* Background video */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            src="https://video.wixstatic.com/video/b34a89_c42f8363f5c14beeb0c9e57dd8826f73/720p/mp4/file.mp4"
+            poster="https://static.wixstatic.com/media/b34a89_c42f8363f5c14beeb0c9e57dd8826f73f000.jpg"
+          />
 
-        {/* Dark gradient overlay */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: 'linear-gradient(to right, rgba(10,18,40,0.82) 0%, rgba(10,18,40,0.55) 60%, rgba(10,18,40,0.25) 100%)' }}
-        />
+          {/* Dark gradient overlay */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{ background: 'linear-gradient(to right, rgba(10,18,40,0.82) 0%, rgba(10,18,40,0.55) 60%, rgba(10,18,40,0.25) 100%)' }}
+          />
 
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-12 py-24 w-full">
-          <div className="max-w-2xl">
+          {/* Content */}
+          <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-12 py-24 w-full">
+            <div className="max-w-2xl">
 
-            {/* Glass badge */}
-            <div
-              className="inline-flex items-center gap-3 px-4 py-2.5 rounded-xl mb-10"
-              style={{
-                background: 'rgba(255,255,255,0.10)',
-                backdropFilter: 'blur(16px)',
-                WebkitBackdropFilter: 'blur(16px)',
-                border: '1px solid rgba(255,255,255,0.18)',
-              }}
-            >
-              <Image src="/logo.png" alt="PV Hamburg" width={32} height={32} className="h-8 w-auto" priority />
-              <span className="text-sm font-medium text-white/80">
-                Photovoltaik Hamburg
-              </span>
-            </div>
-
-            <h1 className="text-4xl md:text-5xl font-bold leading-[1.06] mb-5 text-white">
-              Jetzt effizient{' '}
-              <span style={{ color: '#60A5FA' }}>Energie&nbsp;sparen</span>
-            </h1>
-
-            <p className="text-xl font-light mb-3 text-white/80">
-              Alles aus einer Hand.
-            </p>
-            <p className="text-base leading-relaxed mb-10 max-w-xl text-white/60">
-              Der komplette Photovoltaik-Service aus einer Hand —
-              von der Beratung bis zur Inbetriebnahme.
-            </p>
-
-            <div className="flex flex-wrap gap-4 mb-16">
-              <Link href="/kontakt" className="btn-primary text-base">
-                Kostenlose Beratung sichern
-              </Link>
-              <a
-                href="tel:+4940XXXXXXXX"
-                className="inline-block font-semibold px-7 py-3 rounded-xl text-base text-white transition-all duration-200"
+              {/* Glass badge */}
+              <div
+                className="inline-flex items-center gap-3 px-4 py-2.5 rounded-xl mb-10"
                 style={{
                   background: 'rgba(255,255,255,0.10)',
-                  backdropFilter: 'blur(12px)',
-                  WebkitBackdropFilter: 'blur(12px)',
-                  border: '1px solid rgba(255,255,255,0.20)',
+                  backdropFilter: 'blur(16px)',
+                  WebkitBackdropFilter: 'blur(16px)',
+                  border: '1px solid rgba(255,255,255,0.18)',
                 }}
               >
-                Jetzt anrufen
-              </a>
-            </div>
+                <Image src="/logo.png" alt="PV Hamburg" width={32} height={32} className="h-8 w-auto" priority />
+                <span className="text-sm font-medium text-white/80">
+                  Photovoltaik Hamburg
+                </span>
+              </div>
 
-            {/* Glass stat chips */}
-            <div className="flex flex-wrap gap-3">
-              {[
-                { val: '1',       label: 'Ansprechpartner' },
-                { val: '≤ 4 Wo.', label: 'bis zur fertigen Anlage' },
-                { val: '100 %',   label: 'Made in Germany' },
-              ].map((s) => (
-                <div
-                  key={s.label}
-                  className="flex items-center gap-3 px-5 py-3 rounded-xl"
+              <h1 className="text-4xl md:text-5xl font-bold leading-[1.06] mb-5 text-white">
+                Jetzt effizient{' '}
+                <span style={{ color: '#60A5FA' }}>Energie&nbsp;sparen</span>
+              </h1>
+
+              <p className="text-xl font-light mb-3 text-white/80">
+                Alles aus einer Hand.
+              </p>
+              <p className="text-base leading-relaxed mb-10 max-w-xl text-white/60">
+                Der komplette Photovoltaik-Service aus einer Hand —
+                von der Beratung bis zur Inbetriebnahme.
+              </p>
+
+              <div className="flex flex-wrap gap-4 mb-16">
+                <Link href="/kontakt" className="btn-primary text-base">
+                  Kostenlose Beratung sichern
+                </Link>
+                <a
+                  href="tel:+4917684412063"
+                  className="inline-block font-semibold px-7 py-3 rounded-xl text-base text-white transition-all duration-200"
                   style={{
                     background: 'rgba(255,255,255,0.10)',
-                    backdropFilter: 'blur(16px)',
-                    WebkitBackdropFilter: 'blur(16px)',
-                    border: '1px solid rgba(255,255,255,0.15)',
+                    backdropFilter: 'blur(12px)',
+                    WebkitBackdropFilter: 'blur(12px)',
+                    border: '1px solid rgba(255,255,255,0.20)',
                   }}
                 >
-                  <span className="text-xl font-bold text-white">{s.val}</span>
-                  <span className="text-sm text-white/60">{s.label}</span>
-                </div>
-              ))}
-            </div>
+                  Jetzt anrufen
+                </a>
+              </div>
 
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
       </div>{/* /hero card wrapper */}
 
       {/* ── USP strip ─────────────────────────────────────────────────────── */}
@@ -222,57 +199,23 @@ export default function Home2Page() {
           </div>
         </div>
       </section>
-
-      {/* ── Split image section ───────────────────────────────────────────── */}
-      <section className="overflow-hidden" style={{ background: '#ffffff' }}>
-        <div className="grid md:grid-cols-2">
-          {/* Left: full-bleed image */}
-          <div className="relative h-[480px] md:h-auto">
-            <Image
-              src="/images/solar-install-1.jpg"
-              alt="Solaranlage Installation Hamburg"
-              fill
-              className="object-cover"
-            />
-          </div>
-
-          {/* Right: content */}
-          <div className="flex items-center px-8 py-16 md:px-16 lg:px-20" style={{ background: '#ffffff' }}>
-            <div className="max-w-lg">
-              <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#3B7DD8' }}>
-                PV-Hamburg
-              </p>
-              <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6" style={{ color: '#1E293B' }}>
-                Wir installieren Ihre Solaranlage in Hamburg
-              </h2>
-              <p className="text-lg leading-relaxed mb-8" style={{ color: '#64748B' }}>
-                Wir sind Ihr persönlicher Solarpartner — von der Planung bis
-                zur Installation und Inbetriebnahme. In jedem Bereich ein Profi.
-                Jetzt unabhängig werden!
-              </p>
-              <Link href="/kontakt" className="btn-primary text-base">
-                Kostenlose Beratung sichern
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── Split sections ────────────────────────────────────────────────── */}
-      <section className="overflow-hidden bg-white">
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-24">
 
-        {/* Row 1: image left, text right */}
-        <div className="grid md:grid-cols-2">
-          <div className="relative h-[480px] md:h-auto min-h-[420px]">
-            <Image
-              src="/images/solar-install-1.jpg"
-              alt="Solaranlage Installation Hamburg"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div className="flex items-center px-8 py-16 md:px-14 lg:px-20 bg-white">
-            <div className="max-w-lg">
+          {/* Row 1: image left, text right */}
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="rounded-2xl shadow-xl">
+              <div className="relative h-[480px] rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/solar-install-1.jpg"
+                  alt="Solaranlage Installation Hamburg"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            <div>
               <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#3B7DD8' }}>
                 PV-Hamburg
               </p>
@@ -289,15 +232,10 @@ export default function Home2Page() {
               </Link>
             </div>
           </div>
-        </div>
 
-        {/* Divider */}
-        <div style={{ borderTop: '1px solid #EEF3FA' }} />
-
-        {/* Row 2: text left, image right */}
-        <div className="grid md:grid-cols-2">
-          <div className="flex items-center px-8 py-16 md:px-14 lg:px-20 bg-white order-2 md:order-1">
-            <div className="max-w-lg">
+          {/* Row 2: text left, image right */}
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="order-2 md:order-1">
               <p className="text-sm font-semibold mb-4" style={{ color: '#3B7DD8' }}>
                 Ein Ansprechpartner – Von Anfang bis Ende
               </p>
@@ -314,17 +252,19 @@ export default function Home2Page() {
                 wie es sein sollte.
               </p>
             </div>
+            <div className="rounded-2xl shadow-xl order-1 md:order-2">
+              <div className="relative h-[480px] rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/handshake.webp"
+                  alt="Persönlicher Ansprechpartner"
+                  fill
+                  className="object-cover object-top"
+                />
+              </div>
+            </div>
           </div>
-          <div className="relative h-[480px] md:h-auto min-h-[420px] order-1 md:order-2">
-            <Image
-              src="/images/handshake.webp"
-              alt="Persönlicher Ansprechpartner"
-              fill
-              className="object-cover object-top"
-            />
-          </div>
-        </div>
 
+        </div>
       </section>
 
       {/* ── Pakete ────────────────────────────────────────────────────────── */}
@@ -367,9 +307,9 @@ export default function Home2Page() {
                 {/* Spec rows */}
                 <div className="flex flex-col gap-2 flex-1">
                   {[
-                    { icon: <Home className="w-4 h-4" />,  value: p.area,        label: 'Benötigte Dachfläche (ca.)' },
-                    { icon: <Zap  className="w-4 h-4" />,  value: p.consumption, label: 'Jährlicher Stromverbrauch' },
-                    { icon: <Sun  className="w-4 h-4" />,  value: p.system,      label: 'Anlagengröße' },
+                    { icon: <Home className="w-4 h-4" />, value: p.area, label: 'Benötigte Dachfläche (ca.)' },
+                    { icon: <Zap className="w-4 h-4" />, value: p.consumption, label: 'Jährlicher Stromverbrauch' },
+                    { icon: <Sun className="w-4 h-4" />, value: p.system, label: 'Anlagengröße' },
                   ].map((row) => (
                     <div
                       key={row.label}
@@ -433,6 +373,51 @@ export default function Home2Page() {
         </div>
       </section>
 
+      {/* ── Empfehlungsprogramm teaser ────────────────────────────────────── */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            className="rounded-2xl px-10 py-10 flex flex-col md:flex-row items-center justify-between gap-8"
+            style={{
+              background: 'linear-gradient(135deg, #EEF3FA 0%, #E4EDF8 100%)',
+              border: '1px solid rgba(59,125,216,0.12)',
+            }}
+          >
+            <div className="flex items-center gap-6">
+              <div
+                className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0"
+                style={{ background: 'linear-gradient(135deg, #3B7DD8 0%, #2D68C4 100%)', boxShadow: '0 4px 16px rgba(59,125,216,0.35)' }}
+              >
+                <span className="text-2xl font-black text-white">€</span>
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: '#3B7DD8' }}>
+                  Solar-Empfehlungsprogramm
+                </p>
+                <h2 className="text-xl md:text-2xl font-bold" style={{ color: '#1E293B' }}>
+                  Freunde werben &amp; je 500 € kassieren
+                </h2>
+                <p className="text-sm mt-1" style={{ color: '#64748B' }}>
+                  Du empfiehlst uns weiter — du und dein Freund erhalten jeweils eine Prämie.
+                </p>
+              </div>
+            </div>
+            <Link
+              href="/solar-empfehlungsprogramm"
+              className="shrink-0 inline-flex items-center gap-2 font-bold px-7 py-3 rounded-xl transition-all duration-200"
+              style={{
+                background: 'linear-gradient(135deg, #3B7DD8 0%, #2D68C4 100%)',
+                color: '#fff',
+                boxShadow: '0 4px 20px rgba(59,125,216,0.30)',
+              }}
+            >
+              Mehr erfahren
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA — warm brand section, not dark ────────────────────────────── */}
       <section
         className="relative overflow-hidden py-24"
@@ -465,7 +450,7 @@ export default function Home2Page() {
             </Link>
             {/* Glass secondary */}
             <a
-              href="tel:+4940XXXXXXXX"
+              href="tel:+4917684412063"
               className="inline-flex items-center gap-2 font-bold px-9 py-4 rounded-xl transition-all duration-200 text-white"
               style={{
                 background: 'rgba(255,255,255,0.15)',

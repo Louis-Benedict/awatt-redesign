@@ -55,8 +55,8 @@ export default function KontaktPage() {
                   </div>
                   <div>
                     <div className="font-semibold text-slate-900">Telefon</div>
-                    <a href="tel:+4940XXXXXXXX" className="text-brand-600 text-sm mt-0.5 hover:underline block">
-                      040 - XXXX XXXX
+                    <a href="tel:+4917684412063" className="text-brand-600 text-sm mt-0.5 hover:underline block">
+                      0176 844 12063
                     </a>
                   </div>
                 </div>
@@ -69,8 +69,8 @@ export default function KontaktPage() {
                   </div>
                   <div>
                     <div className="font-semibold text-slate-900">E-Mail</div>
-                    <a href="mailto:info@pv-hh.de" className="text-brand-600 text-sm mt-0.5 hover:underline block">
-                      info@pv-hh.de
+                    <a href="mailto:anfrage@pv-hh.de" className="text-brand-600 text-sm mt-0.5 hover:underline block">
+                      anfrage@pv-hh.de
                     </a>
                   </div>
                 </div>
@@ -165,7 +165,7 @@ export default function KontaktPage() {
                     id="phone"
                     name="phone"
                     className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
-                    placeholder="040 - XXXX XXXX"
+                    placeholder="0176 ..."
                   />
                 </div>
 

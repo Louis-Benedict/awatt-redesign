@@ -8,6 +8,29 @@ export const metadata: Metadata = {
     'Professionelle Photovoltaik-Anlagen in Hamburg. Hochwertige Solarmodule, Heimspeicher und Energiemanagementsysteme aus einer Hand.',
 };
 
+const faqItems = [
+  {
+    q: 'Was kostet eine Photovoltaikanlage in Hamburg?',
+    a: 'Je nach Größe und Ausstattung liegen unsere Pakete zwischen 11.460 € und 14.100 €. Der genaue Preis hängt von Ihrer Dachfläche, dem Modultyp und möglichen Zusatzkomponenten wie Speicher oder Wallbox ab. Wir erstellen Ihnen ein transparentes Festpreisangebot.',
+  },
+  {
+    q: 'Wie lange dauert die Installation?',
+    a: 'Die Installation einer PV-Anlage dauert in der Regel 1–2 Tage. Von der Auftragserteilung bis zur Inbetriebnahme vergehen üblicherweise 4–8 Wochen – wir kümmern uns in dieser Zeit um alle Genehmigungen und Netzanmeldungen.',
+  },
+  {
+    q: 'Lohnt sich eine PV-Anlage trotz des Hamburger Wetters?',
+    a: 'Ja. Moderne Module erzeugen auch bei bewölktem Himmel Strom – entscheidend ist die Gesamteinstrahlung im Jahr. Hamburg liegt bei rund 950–1.050 kWh/m² Globalstrahlung, was für einen wirtschaftlichen Betrieb vollkommen ausreicht.',
+  },
+  {
+    q: 'Wie lange ist die Amortisationszeit?',
+    a: 'Bei einem Strompreis von ca. 30 Ct/kWh amortisiert sich eine typische Anlage in 8–12 Jahren. Mit steigenden Strompreisen und einem Heimspeicher kann sich dieser Zeitraum weiter verkürzen.',
+  },
+  {
+    q: 'Kümmern Sie sich auch um die Netzanmeldung?',
+    a: 'Ja, die Anmeldung beim Netzbetreiber und beim Finanzamt ist bei uns vollständig im Service enthalten. Sie müssen sich um nichts kümmern.',
+  },
+];
+
 const modules = [
   {
     title: 'PV-Solarmodule',
@@ -35,9 +58,23 @@ const modules = [
   },
 ];
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
+
 export default function PhotovoltaikPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero */}
       <section className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -142,6 +179,21 @@ export default function PhotovoltaikPage() {
               gemeinsam. Durch vernetzte Energiegemeinschaften holen Sie das Maximum
               aus Ihrer Anlage heraus.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="section-title text-center mb-10">Häufige Fragen</h2>
+          <div className="max-w-3xl mx-auto space-y-4">
+            {faqItems.map((item) => (
+              <div key={item.q} className="card">
+                <h3 className="font-bold text-slate-900 mb-2">{item.q}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

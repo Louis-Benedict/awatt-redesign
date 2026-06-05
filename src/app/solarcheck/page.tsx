@@ -8,6 +8,25 @@ export const metadata: Metadata = {
     'Ermitteln Sie in wenigen Schritten das Solarpotenzial Ihres Dachs und erfahren Sie, wie viel Sie mit einer PV-Anlage sparen können.',
 };
 
+const faqItems = [
+  {
+    q: 'Was ist der Solarcheck und was kostet er?',
+    a: 'Der Solarcheck ist eine kostenlose und unverbindliche Erstanalyse Ihres Solarpotenzials. Sie geben einige Eckdaten zu Ihrem Dach und Verbrauch an – wir berechnen daraus, wie groß Ihre Anlage sein sollte und wie viel Sie jährlich sparen könnten.',
+  },
+  {
+    q: 'Welche Daten benötige ich für den Solarcheck?',
+    a: 'Sie benötigen eine grobe Schätzung Ihrer nutzbaren Dachfläche (in m²), die Ausrichtung Ihres Dachs (Süd, Ost/West etc.), Ihren jährlichen Stromverbrauch (steht auf Ihrer Stromrechnung) und Ihre Postleitzahl.',
+  },
+  {
+    q: 'Was passiert nach dem Solarcheck?',
+    a: 'Nach dem Solarcheck erhalten Sie eine individuelle Auswertung. Im nächsten Schritt vereinbaren wir einen kostenlosen Vor-Ort-Termin, bei dem wir Ihr Dach begutachten und ein verbindliches Festpreisangebot erstellen.',
+  },
+  {
+    q: 'Ist der Solarcheck auch für ältere Häuser geeignet?',
+    a: 'Ja. Wir prüfen bei jedem Haus individuell die Eignung – unabhängig vom Baujahr. Entscheidend sind der Zustand des Dachs, die Ausrichtung und die statische Tragfähigkeit, die wir beim Vor-Ort-Termin beurteilen.',
+  },
+];
+
 const steps = [
   { num: 1, label: 'Dachfläche & Ausrichtung', desc: 'Wie groß ist Ihre nutzbare Dachfläche und in welche Himmelsrichtung zeigt sie?' },
   { num: 2, label: 'Stromverbrauch', desc: 'Wie hoch ist Ihr jährlicher Stromverbrauch? (kWh/Jahr)' },
@@ -15,9 +34,23 @@ const steps = [
   { num: 4, label: 'Ihr persönliches Ergebnis', desc: 'Wir berechnen Ihr Potenzial und erstellen ein individuelles Angebot.' },
 ];
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
+
 export default function SolarcheckPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero */}
       <section className="bg-gradient-to-br from-brand-600 to-brand-800 text-white py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -125,6 +158,21 @@ export default function SolarcheckPage() {
                 Solarcheck starten
               </button>
             </form>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="section-title text-center mb-10">Häufige Fragen</h2>
+          <div className="max-w-3xl mx-auto space-y-4">
+            {faqItems.map((item) => (
+              <div key={item.q} className="card">
+                <h3 className="font-bold text-slate-900 mb-2">{item.q}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

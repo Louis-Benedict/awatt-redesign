@@ -3,60 +3,140 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { ChevronDown } from 'lucide-react';
+
+const leistungen = [
+  { href: '/photovoltaik', label: 'PV-Anlage' },
+  { href: '/waermepumpe', label: 'Wärmepumpe' },
+  { href: '/stromspeicher', label: 'Stromspeicher' },
+  { href: '/solarcheck', label: 'Solarcheck' },
+];
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/photovoltaik', label: 'Photovoltaik' },
-  { href: '/waermepumpe', label: 'Wärmepumpe' },
   { href: '/ueber-uns', label: 'Über Uns' },
   { href: '/referenzen', label: 'Referenzen' },
+  { href: '/solar-empfehlungsprogramm', label: 'Empfehlung' },
   { href: '/kontakt', label: 'Kontakt' },
 ];
 
+const leistungenHrefs = new Set(leistungen.map((l) => l.href));
+
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [leistungenOpen, setLeistungenOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setLeistungenOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const leistungenActive = leistungenHrefs.has(pathname);
 
   return (
     <nav
-      className="sticky top-0 z-50"
-      style={{
+      className="sticky top-0 z-50 transition-all duration-300"
+      style={scrolled ? {
         background: 'rgba(245, 248, 252, 0.85)',
         backdropFilter: 'blur(24px) saturate(180%)',
         WebkitBackdropFilter: 'blur(24px) saturate(180%)',
         borderBottom: '1px solid rgba(255, 255, 255, 0.6)',
         boxShadow: '0 1px 12px rgba(0,0,0,0.06)',
-      }}
+      } : {}}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
               src="/logo.png"
               alt="PV Hamburg"
-              width={52}
-              height={52}
-              className="h-11 w-auto"
+              width={72}
+              height={72}
+              className="h-16 w-auto"
               priority
             />
           </Link>
 
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center gap-7">
-            {navLinks.map((link) => (
+            <Link
+              href="/"
+              className="text-sm font-medium transition-colors duration-200"
+              style={{ color: pathname === '/' ? '#3B7DD8' : '#475569' }}
+            >
+              Home
+            </Link>
+
+            {/* Leistungen dropdown */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setLeistungenOpen((v) => !v)}
+                className="flex items-center gap-1 text-sm font-medium transition-colors duration-200"
+                style={{ color: leistungenActive ? '#3B7DD8' : '#475569' }}
+              >
+                Leistungen
+                <ChevronDown
+                  className="w-3.5 h-3.5 transition-transform duration-200"
+                  style={{ transform: leistungenOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                />
+              </button>
+
+              {leistungenOpen && (
+                <div
+                  className="absolute top-full left-1/2 mt-3 w-48 rounded-xl py-2 -translate-x-1/2"
+                  style={{
+                    background: 'rgba(255,255,255,0.92)',
+                    backdropFilter: 'blur(24px) saturate(180%)',
+                    WebkitBackdropFilter: 'blur(24px) saturate(180%)',
+                    border: '1px solid rgba(255,255,255,0.7)',
+                    boxShadow: '0 8px 32px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06)',
+                  }}
+                >
+                  {leistungen.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setLeistungenOpen(false)}
+                      className="block px-4 py-2.5 text-sm font-medium transition-colors duration-150 rounded-lg mx-1"
+                      style={{
+                        color: pathname === link.href ? '#3B7DD8' : '#475569',
+                        background: pathname === link.href ? 'rgba(59,125,216,0.07)' : 'transparent',
+                      }}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {navLinks.slice(1).map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className="text-sm font-medium transition-colors duration-200"
-                style={{
-                  color: pathname === link.href ? '#3B7DD8' : '#475569',
-                }}
+                style={{ color: pathname === link.href ? '#3B7DD8' : '#475569' }}
               >
                 {link.label}
               </Link>
             ))}
+
             <Link href="/kontakt" className="btn-primary text-sm py-2.5">
               Termin vereinbaren
             </Link>
@@ -87,7 +167,55 @@ export default function Navigation() {
             className="md:hidden py-4 flex flex-col gap-1"
             style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}
           >
-            {navLinks.map((link) => (
+            <Link
+              href="/"
+              className="px-3 py-2.5 rounded-xl text-sm font-medium transition-colors"
+              style={{
+                background: pathname === '/' ? 'rgba(59,125,216,0.08)' : 'transparent',
+                color: pathname === '/' ? '#2D68C4' : '#475569',
+              }}
+              onClick={() => setIsOpen(false)}
+            >
+              Home
+            </Link>
+
+            {/* Mobile Leistungen expandable */}
+            <div>
+              <button
+                onClick={() => setLeistungenOpen((v) => !v)}
+                className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-colors"
+                style={{
+                  background: leistungenActive ? 'rgba(59,125,216,0.08)' : 'transparent',
+                  color: leistungenActive ? '#2D68C4' : '#475569',
+                }}
+              >
+                Leistungen
+                <ChevronDown
+                  className="w-4 h-4 transition-transform duration-200"
+                  style={{ transform: leistungenOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                />
+              </button>
+              {leistungenOpen && (
+                <div className="ml-4 mt-1 flex flex-col gap-0.5">
+                  {leistungen.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="px-3 py-2 rounded-xl text-sm font-medium transition-colors"
+                      style={{
+                        background: pathname === link.href ? 'rgba(59,125,216,0.08)' : 'transparent',
+                        color: pathname === link.href ? '#2D68C4' : '#64748B',
+                      }}
+                      onClick={() => { setIsOpen(false); setLeistungenOpen(false); }}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {navLinks.slice(1).map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -101,6 +229,7 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
+
             <Link
               href="/kontakt"
               className="btn-primary text-sm mt-2 text-center"

@@ -1,225 +1,424 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Zap, Home, PiggyBank, Recycle, Leaf, Tag } from 'lucide-react';
+import Image from 'next/image';
+import { ShieldCheck, Zap, ClipboardList, BadgeCheck, Home, Sun, ArrowRight } from 'lucide-react';
+import ProzessSection from '@/components/ProzessSection';
 
 export const metadata: Metadata = {
-  title: 'PV-HH – Photovoltaik & Wärmepumpen in Hamburg',
+  title: 'PV-Hamburg – Marktführer für Photovoltaik Anlagen Hamburg',
   description:
-    'Ihr regionaler Partner für Photovoltaik und Wärmepumpen in Hamburg. Über 700 zufriedene Kunden, Deutsche Qualitätsprodukte, kompletter Service aus einer Hand.',
+    'Jetzt effizient Energie sparen. Alles aus einer Hand – Dein Dachdecker- & Elektromeisterbetrieb für Solaranlagen in Hamburg & Umgebung.',
 };
 
-const benefits = [
-  { icon: <Zap      className="w-6 h-6" />, title: 'Unabhängigkeit',    desc: 'Werden Sie unabhängiger von Netzbetreibern und steigenden Strompreisen.' },
-  { icon: <Home     className="w-6 h-6" />, title: 'Wertsteigerung',    desc: 'Erhöhen Sie den Wert Ihrer Immobilie durch eine moderne PV-Anlage.' },
-  { icon: <PiggyBank className="w-6 h-6" />, title: 'Kostenersparnis',  desc: 'Bis zu 80 % Einsparung bei den Stromkosten im Jahresdurchschnitt.' },
-  { icon: <Recycle  className="w-6 h-6" />, title: 'Erneuerbare Energie', desc: 'Nutzen Sie saubere, unerschöpfliche Sonnenenergie für Ihr Zuhause.' },
-  { icon: <Leaf     className="w-6 h-6" />, title: 'Umweltfreundlich',  desc: 'Reduzieren Sie Ihren CO₂-Fußabdruck und schützen Sie das Klima.' },
-  { icon: <Tag      className="w-6 h-6" />, title: 'Förderungen 2025',  desc: 'Profitieren Sie von aktuellen Förderprogrammen und Steuervorteilen.' },
+// ─── Data ─────────────────────────────────────────────────────────────────────
+
+const pakete = [
+  {
+    name: 'Paket S',
+    price: 'ab 11.460 €',
+    area: '35 m²',
+    consumption: 'ab 2.000 kWh',
+    system: '16 Module ca. 7,04 kWp',
+  },
+  {
+    name: 'Paket M',
+    price: 'ab 12.340 €',
+    area: '45 m²',
+    consumption: 'ab 3.000 kWh',
+    system: '19 Module ca. 8,36 kWp',
+  },
+  {
+    name: 'Paket L',
+    price: 'ab 13.020 €',
+    area: '55 m²',
+    consumption: 'ab 4.000 kWh',
+    system: '22 Module ca. 9,68 kWp',
+  },
+  {
+    name: 'Paket XL',
+    price: 'ab 14.100 €',
+    area: '65 m²',
+    consumption: 'ab 5.500 kWh',
+    system: '25 Module ca. 10,25 kWp',
+  },
 ];
 
-const steps = [
-  { num: '01', title: 'Erstberatung', desc: 'Persönliches Gespräch vor Ort oder per Videocall – kostenlos und unverbindlich.' },
-  { num: '02', title: 'Angebotsbesprechung', desc: 'Wir erstellen ein individuelles Angebot und gehen es gemeinsam durch.' },
-  { num: '03', title: 'Installation', desc: 'Unser erfahrenes Team montiert Ihre Anlage zuverlässig und sauber.' },
-  { num: '04', title: 'Elektroanschluss', desc: 'Fachgerechter Netzanschluss durch zertifizierte Elektrofachkräfte.' },
-  { num: '05', title: 'Inbetriebnahme', desc: 'Vollständige Inbetriebnahme, Einweisung und After-Sales-Betreuung.' },
+const trustBadges = [
+  { icon: <ShieldCheck className="w-6 h-6" />, title: '100 % Versichert', desc: 'Alle unsere Projekte & Kunden erfahren den PV-Hamburg Super-Schutz.' },
+  { icon: <Zap className="w-6 h-6" />, title: 'Unabhängigkeit', desc: 'Echte Unabhängigkeit von Energieanbietern und steigenden Strompreisen.' },
+  { icon: <ClipboardList className="w-6 h-6" />, title: 'Anmeldung inklusive', desc: 'Wir kümmern uns vollständig um die Anmeldung Ihrer Photovoltaik-Anlage.' },
+  { icon: <BadgeCheck className="w-6 h-6" />, title: 'Made in Germany', desc: 'Unsere Produkte und unsere Arbeit sind Made in Germany.' },
 ];
 
-const stats = [
-  { value: '700+', label: 'zufriedene Kunden' },
-  { value: '4', label: 'Wochen bis zur Montage' },
-  { value: '80 %', label: 'Ø Jahresersparnis' },
-  { value: '100 %', label: 'persönliche Beratung' },
+const testimonials = [
+  {
+    name: 'Familie Müller',
+    location: 'Wentorf',
+    text: 'Von der Beratung bis zur Inbetriebnahme lief alles reibungslos. Das Team war immer erreichbar und hat alle unsere Fragen geduldig beantwortet. Die Anlage läuft seit dem ersten Tag perfekt.',
+    stars: 5,
+  },
+  {
+    name: 'Thomas K.',
+    location: 'Norderstedt',
+    text: 'Professionelle Beratung, transparente Preisgestaltung und eine saubere Installation. Ich kann pv-hh ohne Einschränkung weiterempfehlen.',
+    stars: 5,
+  },
+  {
+    name: 'Familie Schneider',
+    location: 'Halstenbek',
+    text: 'Wir sind begeistert! Unsere Stromrechnung hat sich mehr als halbiert. Das Investment rechnet sich viel schneller als erwartet.',
+    stars: 5,
+  },
 ];
 
-const products = [
-  {
-    name: 'Heimspeicher',
-    desc: 'Hochwertige Lithium-Eisenphosphat-Speicher für maximale Eigenverbrauchsoptimierung.',
-    badge: 'Topprodukt',
-  },
-  {
-    name: 'Solarmodule',
-    desc: 'Rückseitenkontakt-Doppelglas-Module mit bis zu 23,8 % Modulwirkungsgrad.',
-    badge: 'Made in Germany',
-  },
-  {
-    name: 'Energiemanagement',
-    desc: 'Intelligentes System zur vernetzten Steuerung all Ihrer Energiegeräte.',
-    badge: 'Smart Home',
-  },
-  {
-    name: 'Wallbox',
-    desc: 'Bidirektionale 22-kW-Ladestation für Ihr Elektrofahrzeug – solaroptimiert.',
-    badge: '22 kW',
-  },
-];
+// ─── Shared style helpers ──────────────────────────────────────────────────────
+
+const glassCard: React.CSSProperties = {
+  background: 'rgba(255, 255, 255, 0.72)',
+  backdropFilter: 'blur(24px) saturate(180%)',
+  WebkitBackdropFilter: 'blur(24px) saturate(180%)',
+  border: '1px solid rgba(255, 255, 255, 0.6)',
+  boxShadow: '0 4px 24px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.03), inset 0 1px 0 rgba(255,255,255,0.95)',
+};
+
+// ─── Page ──────────────────────────────────────────────────────────────────────
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-brand-500/5" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-          <div className="max-w-3xl">
-            <span className="inline-block bg-brand-500/20 text-brand-300 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
-              Regional aus Hamburg
-            </span>
-            <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-6">
-              Ihre Energie.{' '}
-              <span className="text-brand-400">Ihre Zukunft.</span>
-            </h1>
-            <p className="text-xl text-slate-300 mb-8 max-w-2xl leading-relaxed">
-              Professionelle Photovoltaik-Anlagen und Wärmepumpen für Hamburg und Umgebung.
-              Komplett aus einer Hand – von der Beratung bis zur Inbetriebnahme.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/kontakt" className="btn-primary text-base">
-                Kostenlos beraten lassen
-              </Link>
-              <Link href="/referenzen" className="btn-outline text-base border-white text-white hover:bg-white hover:text-slate-900">
-                Referenzen ansehen
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ── Hero card ─────────────────────────────────────────────────────── */}
+      <div className="px-3 sm:px-5 pt-4 pb-0" style={{ background: '#F5F8FC' }}>
+        <section
+          className="relative overflow-hidden flex items-center rounded-2xl"
+          style={{ minHeight: '70vh' }}
+        >
+          {/* Background video */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            src="https://video.wixstatic.com/video/b34a89_c42f8363f5c14beeb0c9e57dd8826f73/720p/mp4/file.mp4"
+            poster="https://static.wixstatic.com/media/b34a89_c42f8363f5c14beeb0c9e57dd8826f73f000.jpg"
+          />
 
-      {/* Stats bar */}
-      <section className="bg-brand-500 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <div className="text-3xl font-bold">{stat.value}</div>
-                <div className="text-sm text-brand-100 mt-1">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+          {/* Dark gradient overlay */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{ background: 'linear-gradient(to right, rgba(10,18,40,0.82) 0%, rgba(10,18,40,0.55) 60%, rgba(10,18,40,0.25) 100%)' }}
+          />
 
-      {/* Products */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Unsere Produkte & Lösungen</h2>
-            <p className="section-subtitle mx-auto">
-              Wir setzen auf bewährte Premiumprodukte für ein zuverlässiges Energiesystem.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products.map((p) => (
-              <div key={p.name} className="card hover:shadow-lg transition-shadow">
-                <span className="inline-block bg-brand-50 text-brand-600 text-xs font-semibold px-3 py-1 rounded-full mb-4">
-                  {p.badge}
+          {/* Content */}
+          <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-12 py-24 w-full">
+            <div className="max-w-2xl">
+
+              {/* Glass badge */}
+              <div
+                className="inline-flex items-center gap-3 px-4 py-2.5 rounded-xl mb-10"
+                style={{
+                  background: 'rgba(255,255,255,0.10)',
+                  backdropFilter: 'blur(16px)',
+                  WebkitBackdropFilter: 'blur(16px)',
+                  border: '1px solid rgba(255,255,255,0.18)',
+                }}
+              >
+                <Image src="/logo.png" alt="PV Hamburg" width={32} height={32} className="h-8 w-auto" priority />
+                <span className="text-sm font-medium text-white/80">
+                  Photovoltaik Hamburg
                 </span>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{p.name}</h3>
-                <p className="text-sm text-slate-600 leading-relaxed">{p.desc}</p>
               </div>
-            ))}
+
+              <h1 className="text-4xl md:text-5xl font-bold leading-[1.06] mb-5 text-white">
+                Jetzt effizient{' '}
+                <span style={{ color: '#60A5FA' }}>Energie&nbsp;sparen</span>
+              </h1>
+
+              <p className="text-xl font-light mb-3 text-white/80">
+                Alles aus einer Hand.
+              </p>
+              <p className="text-base leading-relaxed mb-10 max-w-xl text-white/60">
+                Der komplette Photovoltaik-Service aus einer Hand —
+                von der Beratung bis zur Inbetriebnahme.
+              </p>
+
+              <div className="flex flex-wrap gap-4 mb-16">
+                <Link href="/kontakt" className="btn-primary text-base">
+                  Kostenlose Beratung sichern
+                </Link>
+                <a
+                  href="tel:+4917684412063"
+                  className="inline-block font-semibold px-7 py-3 rounded-xl text-base text-white transition-all duration-200"
+                  style={{
+                    background: 'rgba(255,255,255,0.10)',
+                    backdropFilter: 'blur(12px)',
+                    WebkitBackdropFilter: 'blur(12px)',
+                    border: '1px solid rgba(255,255,255,0.20)',
+                  }}
+                >
+                  Jetzt anrufen
+                </a>
+              </div>
+
+            </div>
           </div>
-          <div className="text-center mt-10">
-            <Link href="/photovoltaik" className="btn-primary">
-              Alle Produkte entdecken
-            </Link>
+        </section>
+      </div>{/* /hero card wrapper */}
+
+      {/* ── USP strip ─────────────────────────────────────────────────────── */}
+      <section style={{ background: '#EEF3FA', borderTop: '1px solid rgba(0,0,0,0.05)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+          <div className="flex flex-wrap justify-center gap-8 text-sm font-medium" style={{ color: '#94A3B8' }}>
+            {['Direkt Geld sparen', 'Unabhängig sein', 'Qualität & Zuverlässigkeit', '1 Ansprechpartner – von Anfang bis Ende'].map((item) => (
+              <span key={item} className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-400 shrink-0" />
+                {item}
+              </span>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Why us */}
-      <section className="py-20 bg-slate-50">
+      {/* ── Hamburg aufgepasst ────────────────────────────────────────────── */}
+      <section style={{ background: '#F5F8FC' }} className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="section-title">Warum PV-HH?</h2>
-              <p className="text-slate-600 mb-8 leading-relaxed">
-                Seit unserer Gründung haben wir über 700 Anlagen in Hamburg und Umgebung
-                installiert. Als lokales Unternehmen kennen wir die Region und stehen Ihnen
-                persönlich zur Seite.
+              <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#3B7DD8' }}>
+                Hamburg aufgepasst
               </p>
-              <ul className="space-y-4">
-                {[
-                  { title: 'Alles aus einer Hand', desc: 'Von der Planung über die Installation bis zum Netzanschluss.' },
-                  { title: 'Lokale Expertise', desc: 'Persönliche Ansprechpartner vor Ort in Hamburg.' },
-                  { title: 'Hochwertige Komponenten', desc: 'Nur geprüfte Premiumprodukte führender Hersteller.' },
-                  { title: 'Bestpreisgarantie', desc: 'Transparente Angebote ohne versteckte Kosten.' },
-                ].map((item) => (
-                  <li key={item.title} className="flex gap-3">
-                    <div className="w-6 h-6 rounded-full bg-brand-500 flex items-center justify-center shrink-0 mt-0.5">
-                      <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <div>
-                      <span className="font-semibold text-slate-900">{item.title}</span>
-                      <span className="text-slate-600"> – {item.desc}</span>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-              <Link href="/ueber-uns" className="btn-primary mt-8 inline-block">
-                Mehr über uns
-              </Link>
+              <h2 className="section-title text-3xl md:text-4xl leading-tight">
+                Qualität aus<br />einer Hand
+              </h2>
+              <p className="mt-5 text-lg leading-relaxed" style={{ color: '#64748B' }}>
+                Wir bieten Ihnen den kompletten Photovoltaik-Service aus einer Hand —
+                von der Planung über die Installation bis zur Inbetriebnahme
+                in Hamburg &amp; Umgebung.
+              </p>
             </div>
-            <div className="bg-gradient-to-br from-brand-500 to-brand-700 rounded-xl p-8 text-white">
-              <div className="text-4xl mb-4">☀️</div>
-              <h3 className="text-2xl font-bold mb-3">Kostenloser Solarcheck</h3>
-              <p className="text-brand-100 mb-6 leading-relaxed">
-                Erfahren Sie in wenigen Minuten, wie viel Potenzial Ihr Dach hat und
-                wie hoch Ihre Ersparnis sein könnte.
+
+            {/* Glass callout */}
+            <div className="rounded-xl p-8" style={glassCard}>
+              <div
+                className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                style={{ background: 'rgba(59,125,216,0.09)', border: '1px solid rgba(59,125,216,0.18)' }}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="#3B7DD8" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8}
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+              <p className="text-xl font-bold mb-3" style={{ color: '#1E293B' }}>
+                1 Kunde = 1 Ansprechpartner
               </p>
-              <Link href="/solarcheck" className="inline-block bg-white text-brand-600 font-semibold px-6 py-3 rounded-lg hover:bg-brand-50 transition-colors">
-                Jetzt Solarcheck starten
-              </Link>
+              <p className="leading-relaxed" style={{ color: '#64748B' }}>
+                Von der ersten Beratung bis zum Zählertausch steht Ihnen Ihr
+                persönlicher Ansprechpartner jederzeit zur Verfügung.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 6 Benefits */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="section-title">6 Vorteile einer Photovoltaikanlage</h2>
-            <p className="section-subtitle mx-auto">
-              Eine PV-Anlage ist eine der sinnvollsten Investitionen für Ihr Zuhause.
-            </p>
+      {/* ── Split sections ────────────────────────────────────────────────── */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-24">
+
+          {/* Row 1: image left, text right */}
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="rounded-2xl shadow-xl">
+              <div className="relative h-[480px] rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/solar-install-1.jpg"
+                  alt="Solaranlage Installation Hamburg"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#3B7DD8' }}>
+                A3-Watt Elektrotechnik
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6" style={{ color: '#1E293B' }}>
+                Wir installieren Ihre Solaranlage in Hamburg
+              </h2>
+              <p className="text-lg leading-relaxed mb-8" style={{ color: '#64748B' }}>
+                Wir sind Ihr persönlicher Solarpartner — von der Planung bis
+                zur Installation und Inbetriebnahme. In jedem Bereich ein Profi.
+                Jetzt unabhängig werden!
+              </p>
+              <Link href="/kontakt" className="btn-primary text-base">
+                Kostenlose Beratung sichern
+              </Link>
+            </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((b) => (
-              <div key={b.title} className="card hover:shadow-lg transition-shadow">
-                <div className="w-12 h-12 rounded-xl bg-brand-50 text-brand-500 flex items-center justify-center mb-4">{b.icon}</div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{b.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{b.desc}</p>
+
+          {/* Row 2: text left, image right */}
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="order-2 md:order-1">
+              <p className="text-sm font-semibold mb-4" style={{ color: '#3B7DD8' }}>
+                Ein Ansprechpartner – Von Anfang bis Ende
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6" style={{ color: '#1E293B' }}>
+                1 Kunde = 1 Ansprechpartner
+              </h2>
+              <p className="text-lg leading-relaxed" style={{ color: '#64748B' }}>
+                Keine Umwege und kein Durcheinander: Bei A3-Watt erhält jeder
+                Kunde eine Telefonnummer seines festen Ansprechpartners für das
+                gesamte Projekt. Von der ersten Beratung bis zum Zählertausch
+                steht Ihnen Ihr Ansprechpartner jederzeit zur Verfügung,
+                beantwortet all Ihre Fragen und kümmert sich um jeden Schritt.
+                So bleibt alles transparent, einfach und effizient — genau so,
+                wie es sein sollte.
+              </p>
+            </div>
+            <div className="rounded-2xl shadow-xl order-1 md:order-2">
+              <div className="relative h-[480px] rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/handshake.webp"
+                  alt="Persönlicher Ansprechpartner"
+                  fill
+                  className="object-cover object-top"
+                />
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── Pakete ────────────────────────────────────────────────────────── */}
+      <section className="relative overflow-hidden py-28">
+        {/* Background photo + dark overlay */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/pakete-bg.jpg"
+            alt=""
+            fill
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0" style={{ background: 'rgba(18,32,60,0.82)' }} />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Unsere Pakete</h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {pakete.map((p) => (
+              <div
+                key={p.name}
+                className="rounded-xl p-6 flex flex-col gap-3"
+                style={{
+                  background: 'rgba(255,255,255,0.10)',
+                  backdropFilter: 'blur(20px) saturate(150%)',
+                  WebkitBackdropFilter: 'blur(20px) saturate(150%)',
+                  border: '1px solid rgba(255,255,255,0.16)',
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+                }}
+              >
+                {/* Header */}
+                <div className="text-center pb-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.12)' }}>
+                  <h3 className="text-2xl font-bold text-white mb-1">{p.name}</h3>
+                  <p className="text-xs" style={{ color: 'rgba(255,255,255,0.55)' }}>Individuell anpassbar</p>
+                </div>
+
+                {/* Spec rows */}
+                <div className="flex flex-col gap-2 flex-1">
+                  {[
+                    { icon: <Home className="w-4 h-4" />, value: p.area, label: 'Benötigte Dachfläche (ca.)' },
+                    { icon: <Zap className="w-4 h-4" />, value: p.consumption, label: 'Jährlicher Stromverbrauch' },
+                    { icon: <Sun className="w-4 h-4" />, value: p.system, label: 'Anlagengröße' },
+                  ].map((row) => (
+                    <div
+                      key={row.label}
+                      className="flex items-center gap-3 px-3 py-2.5 rounded-lg"
+                      style={{
+                        background: 'rgba(255,255,255,0.08)',
+                        border: '1px solid rgba(255,255,255,0.10)',
+                      }}
+                    >
+                      <span style={{ color: 'rgba(255,255,255,0.6)' }}>{row.icon}</span>
+                      <div>
+                        <div className="font-bold text-white text-sm leading-tight">{row.value}</div>
+                        <div className="text-xs leading-tight" style={{ color: 'rgba(255,255,255,0.5)' }}>{row.label}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Price button */}
+                <Link
+                  href="/kontakt"
+                  className="mt-2 flex items-center justify-center gap-2 font-bold py-3 rounded-full text-white transition-all duration-200 hover:brightness-110"
+                  style={{ background: '#3B7DD8', boxShadow: '0 4px 16px rgba(59,125,216,0.4)' }}
+                >
+                  <ArrowRight className="w-4 h-4" />
+                  {p.price}
+                </Link>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center text-sm mt-10" style={{ color: 'rgba(255,255,255,0.4)' }}>
+            Wir bieten selbstverständlich auch individuelle Wunschanlagen — kontaktieren Sie uns einfach.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Der Prozess ───────────────────────────────────────────────────── */}
+      <ProzessSection />
+
+      {/* ── Versprechen ───────────────────────────────────────────────────── */}
+      <section style={{ background: '#F5F8FC' }} className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <h2 className="section-title text-3xl">Unser Versprechen an Sie</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {trustBadges.map((b) => (
+              <div key={b.title} className="rounded-xl p-7 text-center" style={glassCard}>
+                <div
+                  className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-5 text-brand-500"
+                  style={{ background: 'rgba(59,125,216,0.08)', border: '1px solid rgba(59,125,216,0.15)' }}
+                >
+                  {b.icon}
+                </div>
+                <h3 className="font-bold mb-2" style={{ color: '#1E293B' }}>{b.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: '#64748B' }}>{b.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 5-step process */}
-      <section className="py-20 bg-slate-900 text-white">
+      {/* ── Testimonials ──────────────────────────────────────────────────── */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-3xl font-bold mb-4">Unser 5-Punkte-Plan</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
-              Von der ersten Beratung bis zur fertigen Anlage – wir begleiten Sie durch jeden Schritt.
+          <div className="text-center mb-14">
+            <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#3B7DD8' }}>
+              Kundenstimmen
             </p>
+            <h2 className="section-title text-3xl">Was unsere Kunden sagen</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {steps.map((step, i) => (
-              <div key={step.num} className="relative">
-                {i < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-6 left-full w-full h-0.5 bg-brand-500/30 z-0" />
-                )}
-                <div className="relative z-10 text-center">
-                  <div className="w-12 h-12 rounded-full bg-brand-500 text-white font-bold text-lg flex items-center justify-center mx-auto mb-4">
-                    {step.num}
-                  </div>
-                  <h3 className="font-bold text-white mb-2">{step.title}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">{step.desc}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {testimonials.map((t) => (
+              <div key={t.name} className="rounded-xl p-7" style={glassCard}>
+                <div className="flex mb-4">
+                  {Array.from({ length: t.stars }).map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-brand-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-sm leading-relaxed mb-5 italic" style={{ color: '#64748B' }}>
+                  &ldquo;{t.text}&rdquo;
+                </p>
+                <div>
+                  <div className="font-semibold text-sm" style={{ color: '#1E293B' }}>{t.name}</div>
+                  <div className="text-xs mt-0.5" style={{ color: '#94A3B8' }}>{t.location}</div>
                 </div>
               </div>
             ))}
@@ -227,42 +426,91 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Service area */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="section-title">Unser Einsatzgebiet</h2>
-          <p className="section-subtitle mx-auto mb-8">
-            Wir sind Ihr lokaler Partner in Hamburg und der gesamten Metropolregion –
-            von der Innenstadt bis ins Umland.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
-            {['Hamburg', 'Schleswig-Holstein', 'Niedersachsen', 'Lübeck', 'Kiel', 'Norderstedt', 'Reinbek', 'Halstenbek'].map((city) => (
-              <span key={city} className="bg-white border border-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">
-                {city}
-              </span>
-            ))}
+      {/* ── Empfehlungsprogramm teaser ────────────────────────────────────── */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            className="rounded-2xl px-10 py-10 flex flex-col md:flex-row items-center justify-between gap-8"
+            style={{
+              background: 'linear-gradient(135deg, #EEF3FA 0%, #E4EDF8 100%)',
+              border: '1px solid rgba(59,125,216,0.12)',
+            }}
+          >
+            <div className="flex items-center gap-6">
+              <div
+                className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0"
+                style={{ background: 'linear-gradient(135deg, #3B7DD8 0%, #2D68C4 100%)', boxShadow: '0 4px 16px rgba(59,125,216,0.35)' }}
+              >
+                <span className="text-2xl font-black text-white">€</span>
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: '#3B7DD8' }}>
+                  Solar-Empfehlungsprogramm
+                </p>
+                <h2 className="text-xl md:text-2xl font-bold" style={{ color: '#1E293B' }}>
+                  Freunde werben &amp; je 500 € kassieren
+                </h2>
+                <p className="text-sm mt-1" style={{ color: '#64748B' }}>
+                  Du empfiehlst uns weiter — du und dein Freund erhalten jeweils eine Prämie.
+                </p>
+              </div>
+            </div>
+            <Link
+              href="/solar-empfehlungsprogramm"
+              className="shrink-0 inline-flex items-center gap-2 font-bold px-7 py-3 rounded-xl transition-all duration-200"
+              style={{
+                background: 'linear-gradient(135deg, #3B7DD8 0%, #2D68C4 100%)',
+                color: '#fff',
+                boxShadow: '0 4px 20px rgba(59,125,216,0.30)',
+              }}
+            >
+              Mehr erfahren
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
-          <Link href="/kontakt" className="btn-primary">
-            Jetzt Beratungstermin anfragen
-          </Link>
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section className="py-16 bg-brand-500 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-3xl font-bold mb-4">
-            Bereit für Ihre eigene Solaranlage?
+      {/* ── CTA ───────────────────────────────────────────────────────────── */}
+      <section
+        className="relative overflow-hidden py-24"
+        style={{ background: 'linear-gradient(135deg, #3B7DD8 0%, #2D68C4 60%, #3B7DD8 100%)' }}
+      >
+        {/* Soft highlight overlay */}
+        <div className="pointer-events-none absolute inset-0" style={{
+          background: 'radial-gradient(ellipse at 30% 30%, rgba(255,255,255,0.15) 0%, transparent 55%)',
+        }} />
+
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-5 text-white">
+            Jetzt Beratung sichern
           </h2>
-          <p className="text-brand-100 text-lg mb-8">
-            Kontaktieren Sie uns jetzt für ein kostenloses und unverbindliches Beratungsgespräch.
+          <p className="text-lg mb-10 max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.75)' }}>
+            Kostenlos, unverbindlich und innerhalb von 10 Tagen bei Ihnen vor Ort.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/kontakt" className="inline-block bg-white text-brand-600 font-semibold px-8 py-3 rounded-lg hover:bg-brand-50 transition-colors">
-              Termin vereinbaren
+            <Link
+              href="/kontakt"
+              className="inline-block font-bold px-9 py-4 rounded-xl transition-all duration-200"
+              style={{
+                background: 'rgba(255,255,255,0.95)',
+                color: '#2D68C4',
+                boxShadow: '0 4px 24px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,1)',
+              }}
+            >
+              Kostenlose Beratung sichern
             </Link>
-            <a href="tel:+4940XXXXXXXX" className="inline-block border-2 border-white text-white font-semibold px-8 py-3 rounded-lg hover:bg-white/10 transition-colors">
-              040 - XXXX XXXX
+            <a
+              href="tel:+4917684412063"
+              className="inline-flex items-center gap-2 font-bold px-9 py-4 rounded-xl transition-all duration-200 text-white"
+              style={{
+                background: 'rgba(255,255,255,0.15)',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
+                border: '1px solid rgba(255,255,255,0.35)',
+              }}
+            >
+              Jetzt anrufen
             </a>
           </div>
         </div>

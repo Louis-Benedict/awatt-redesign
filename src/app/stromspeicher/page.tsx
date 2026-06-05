@@ -9,6 +9,29 @@ export const metadata: Metadata = {
     'Maximieren Sie den Eigenverbrauch Ihrer Photovoltaikanlage mit einem hochwertigen Heimspeicher. LiFePO₄-Technologie für maximale Sicherheit und Langlebigkeit.',
 };
 
+const faqItems = [
+  {
+    q: 'Brauche ich einen Speicher, wenn ich eine PV-Anlage habe?',
+    a: 'Ein Speicher ist nicht zwingend erforderlich, erhöht aber Ihren Eigenverbrauchsanteil von ca. 30 % auf bis zu 80 %. Ohne Speicher fließt überschüssiger Strom ins Netz – zu einer Vergütung, die deutlich unter dem Kaufpreis liegt.',
+  },
+  {
+    q: 'Welche Speichergröße ist die richtige für meinen Haushalt?',
+    a: 'Als Faustregel gilt: 1 kWh Speicher pro 1.000 kWh Jahresverbrauch. Für einen 4-Personen-Haushalt mit ca. 4.500 kWh/Jahr empfehlen wir einen 7,5- oder 10,0-kWh-Speicher. Im Beratungsgespräch ermitteln wir die optimale Größe für Ihre Situation.',
+  },
+  {
+    q: 'Wie lange hält ein Batteriespeicher?',
+    a: 'Unsere LiFePO₄-Speicher sind auf über 6.000 Ladezyklen ausgelegt, was einer Betriebsdauer von mehr als 15 Jahren entspricht. Wir geben 10 Jahre Garantie auf den Speicher.',
+  },
+  {
+    q: 'Kann ich nachträglich einen Speicher zu meiner bestehenden PV-Anlage nachrüsten?',
+    a: 'In den meisten Fällen ja. Wir prüfen die Kompatibilität Ihrer bestehenden Anlage und beraten Sie zu den besten Optionen für eine Nachrüstung.',
+  },
+  {
+    q: 'Was kostet ein Heimspeicher?',
+    a: 'Die Kosten variieren je nach Kapazität und Hersteller. Unsere Speicher starten ab ca. 3.500 € für 5,0 kWh. Im Paket mit einer neuen PV-Anlage erhalten Sie die besten Konditionen. Wir erstellen Ihnen gerne ein individuelles Angebot.',
+  },
+];
+
 const storageModels = [
   { size: '5,0 kWh', suitable: 'Kleine Haushalte 1–2 Personen', autarky: 'bis 55 %' },
   { size: '7,5 kWh', suitable: 'Mittlere Haushalte 2–4 Personen', autarky: 'bis 70 %', popular: true },
@@ -25,9 +48,23 @@ const techFeatures = [
   { title: 'Smart-Home-Integration', desc: 'Nahtlose Integration in gängige Smart-Home-Systeme und Energiemanagementsysteme.' },
 ];
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
+
 export default function StromspeicherPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero */}
       <section className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -152,6 +189,21 @@ export default function StromspeicherPage() {
                 </div>
                 <h3 className="font-bold text-slate-900 mb-2">{f.title}</h3>
                 <p className="text-sm text-slate-600 leading-relaxed">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="section-title text-center mb-10">Häufige Fragen</h2>
+          <div className="max-w-3xl mx-auto space-y-4">
+            {faqItems.map((item) => (
+              <div key={item.q} className="card">
+                <h3 className="font-bold text-slate-900 mb-2">{item.q}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.a}</p>
               </div>
             ))}
           </div>
