@@ -50,7 +50,7 @@ const trustBadges = [
   { icon: <BadgeCheck className="w-6 h-6" />, title: 'Made in Germany', desc: 'Unsere Produkte und unsere Arbeit sind Made in Germany.' },
 ];
 
-const testimonials = [
+/* const testimonials = [
   {
     name: 'Familie Müller',
     location: 'Wentorf',
@@ -69,7 +69,7 @@ const testimonials = [
     text: 'Wir sind begeistert! Unsere Stromrechnung hat sich mehr als halbiert. Das Investment rechnet sich viel schneller als erwartet.',
     stars: 5,
   },
-];
+]; */
 
 // ─── Shared style helpers ──────────────────────────────────────────────────────
 
@@ -395,7 +395,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Testimonials ──────────────────────────────────────────────────── */}
-      <section className="py-24 bg-white">
+      {/* <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#3B7DD8' }}>
@@ -424,7 +424,7 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── Empfehlungsprogramm teaser ────────────────────────────────────── */}
       <section className="py-16 bg-white">

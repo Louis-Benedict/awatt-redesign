@@ -72,8 +72,9 @@ export default function ProzessSection() {
           </h2>
         </div>
 
+        <div ref={gridRef}>
         {/* ── Desktop layout (lg+): horizontal timeline ── */}
-        <div ref={gridRef} className="hidden lg:block relative mb-14">
+        <div className="hidden lg:block relative mb-14">
 
           {/* Track */}
           <div
@@ -216,6 +217,7 @@ export default function ProzessSection() {
               );
             })}
           </div>
+        </div>
         </div>
 
         {/* CTA */}

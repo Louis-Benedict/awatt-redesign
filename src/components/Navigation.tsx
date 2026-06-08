@@ -16,7 +16,7 @@ const leistungen = [
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/ueber-uns', label: 'Über Uns' },
-  { href: '/referenzen', label: 'Referenzen' },
+  { href: '/blog', label: 'Blog' },
 ];
 
 const leistungenHrefs = new Set(leistungen.map((l) => l.href));
