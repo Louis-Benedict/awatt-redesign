@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Impressum | A3-Watt Elektrotechnik',
+  title: 'Impressum | PV-Hamburg Elektrotechnik',
   description: 'Impressum und rechtliche Angaben von pv-hh.de',
 };
 
@@ -13,7 +13,7 @@ export default function ImpressumPage() {
       <section className="mb-8">
         <h2 className="text-xl font-bold text-slate-800 mb-4">Angaben gemäß § 5 TMG</h2>
         <div className="text-slate-600 space-y-1">
-          <p className="font-semibold text-slate-900">A3-Watt Elektrotechnik</p>
+          <p className="font-semibold text-slate-900">PV-Hamburg Elektrotechnik</p>
           <p>Stintenburger Weg 1</p>
           <p>23909 Ratzeburg</p>
         </div>

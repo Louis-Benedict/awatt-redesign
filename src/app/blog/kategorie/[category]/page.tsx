@@ -16,8 +16,8 @@ export async function generateMetadata({
   const name = slugCategoryMap[category];
   if (!name) return {};
   return {
-    title: `${name} – Blog | A3-Watt Hamburg`,
-    description: `Alle Artikel zum Thema ${name} auf dem Blog von A3-Watt Hamburg.`,
+    title: `${name} – Blog | PV-Hamburg Hamburg`,
+    description: `Alle Artikel zum Thema ${name} auf dem Blog von PV-Hamburg Hamburg.`,
   };
 }
 

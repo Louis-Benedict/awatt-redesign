@@ -8,26 +8,26 @@ const steps = [
   {
     num: 1,
     label: 'Beratung',
-    image: '/images/step-beratung.jpg',
-    desc: 'Unser Berater sind von Montag bis Freitag von 08 bis 19 Uhr für Sie und Ihre Anliegen verfügbar.',
+    image: '/images/step-beratung.png',
+    desc: 'Wir analysieren Ihren Stromverbrauch, Ihre Dachfläche und Ihre Ziele, um die passende PV-Lösung für Sie zu finden.',
   },
   {
     num: 2,
     label: 'Planung',
-    image: '/images/step-planung.jpg',
-    desc: 'Unsere Experten planen Ihre individuelle Solaranlage. Perfekt auf Sie und Ihr Gebäude abgestimmt.',
+    image: '/images/step-planung.png',
+    desc: 'Unsere Experten planen Ihre PV-Anlage individuell – inklusive Module, Wechselrichter, Speicher und optimaler Ausrichtung.',
   },
   {
     num: 3,
     label: 'Montage',
-    image: '/images/solar-install-2.jpg',
-    desc: 'Unsere Monteure installieren Ihre Solaranlage und erledigen alle Anmeldungen.',
+    image: '/images/step-montage.png',
+    desc: 'Unser Montageteam installiert Ihre Solarmodule fachgerecht, sicher und effizient direkt auf Ihrem Dach.',
   },
   {
     num: 4,
-    label: 'Fertigstellung',
-    image: '/images/handshake.webp',
-    desc: 'Wir liefern Qualität mit Präzision und Perfektion — und das schon seit 2020.',
+    label: 'Inbetriebnahme und Übergabe',
+    image: '/images/step-fertigstellung.png',
+    desc: 'Nach erfolgreicher Inbetriebnahme erklären wir Ihnen Ihre Anlage und übergeben sie Ihnen schlüsselfertig – für maximale Leistung und Sicherheit.',
   },
 ];
 

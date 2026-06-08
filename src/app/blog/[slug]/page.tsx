@@ -42,7 +42,7 @@ export async function generateMetadata({
       type: 'article',
       publishedTime: post.publishedAt,
       url: `https://pv-hh.de/blog/${post.slug}`,
-      siteName: 'A3-Watt',
+      siteName: 'PV-Hamburg',
     },
   };
 }

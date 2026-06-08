@@ -15,31 +15,31 @@ export const metadata: Metadata = {
 const pakete = [
   {
     name: 'Paket S',
-    price: 'ab 11.460 €',
+    price: 'ab 13.440 €',
     area: '35 m²',
     consumption: 'ab 2.000 kWh',
-    system: '16 Module ca. 7,04 kWp',
+    system: '15 Module ca. 7,2 kWp',
   },
   {
     name: 'Paket M',
-    price: 'ab 12.340 €',
+    price: 'ab 15.464 €',
     area: '45 m²',
     consumption: 'ab 3.000 kWh',
-    system: '19 Module ca. 8,36 kWp',
+    system: '19 Module ca. 9,12 kWp',
   },
   {
     name: 'Paket L',
-    price: 'ab 13.020 €',
+    price: 'ab 16.792 €',
     area: '55 m²',
     consumption: 'ab 4.000 kWh',
-    system: '22 Module ca. 9,68 kWp',
+    system: '22 Module ca. 10,56 kWp',
   },
   {
     name: 'Paket XL',
-    price: 'ab 14.100 €',
+    price: 'ab 18.500 €',
     area: '65 m²',
     consumption: 'ab 5.500 kWh',
-    system: '25 Module ca. 10,25 kWp',
+    system: '25 Module ca. 12 kWp',
   },
 ];
 
@@ -238,7 +238,7 @@ export default function HomePage() {
             </div>
             <div>
               <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#3B7DD8' }}>
-                A3-Watt Elektrotechnik
+                PV-Hamburg Elektrotechnik
               </p>
               <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6" style={{ color: '#1E293B' }}>
                 Wir installieren Ihre Solaranlage in Hamburg
@@ -264,7 +264,7 @@ export default function HomePage() {
                 1 Kunde = 1 Ansprechpartner
               </h2>
               <p className="text-lg leading-relaxed" style={{ color: '#64748B' }}>
-                Keine Umwege und kein Durcheinander: Bei A3-Watt erhält jeder
+                Keine Umwege und kein Durcheinander: Bei PV-Hamburg erhält jeder
                 Kunde eine Telefonnummer seines festen Ansprechpartners für das
                 gesamte Projekt. Von der ersten Beratung bis zum Zählertausch
                 steht Ihnen Ihr Ansprechpartner jederzeit zur Verfügung,
@@ -426,50 +426,6 @@ export default function HomePage() {
         </div>
       </section> */}
 
-      {/* ── Empfehlungsprogramm teaser ────────────────────────────────────── */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div
-            className="rounded-2xl px-10 py-10 flex flex-col md:flex-row items-center justify-between gap-8"
-            style={{
-              background: 'linear-gradient(135deg, #EEF3FA 0%, #E4EDF8 100%)',
-              border: '1px solid rgba(59,125,216,0.12)',
-            }}
-          >
-            <div className="flex items-center gap-6">
-              <div
-                className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0"
-                style={{ background: 'linear-gradient(135deg, #3B7DD8 0%, #2D68C4 100%)', boxShadow: '0 4px 16px rgba(59,125,216,0.35)' }}
-              >
-                <span className="text-2xl font-black text-white">€</span>
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: '#3B7DD8' }}>
-                  Solar-Empfehlungsprogramm
-                </p>
-                <h2 className="text-xl md:text-2xl font-bold" style={{ color: '#1E293B' }}>
-                  Freunde werben &amp; je 500 € kassieren
-                </h2>
-                <p className="text-sm mt-1" style={{ color: '#64748B' }}>
-                  Du empfiehlst uns weiter — du und dein Freund erhalten jeweils eine Prämie.
-                </p>
-              </div>
-            </div>
-            <Link
-              href="/solar-empfehlungsprogramm"
-              className="shrink-0 inline-flex items-center gap-2 font-bold px-7 py-3 rounded-xl transition-all duration-200"
-              style={{
-                background: 'linear-gradient(135deg, #3B7DD8 0%, #2D68C4 100%)',
-                color: '#fff',
-                boxShadow: '0 4px 20px rgba(59,125,216,0.30)',
-              }}
-            >
-              Mehr erfahren
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* ── CTA ───────────────────────────────────────────────────────────── */}
       <section

@@ -20,7 +20,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'photovoltaik-hamburg-lohnt-sich',
     title: 'Solaranlage in Hamburg – Lohnt sich die Investition?',
-    metaTitle: 'Solaranlage Hamburg – Lohnt sich die Investition 2025? | A3-Watt',
+    metaTitle: 'Solaranlage Hamburg – Lohnt sich die Investition 2025? | PV-Hamburg',
     metaDescription:
       'Lohnt sich eine Solaranlage in Hamburg wirklich? Wir erklären Sonnenstunden, Amortisationszeiten und warum PV in Hamburg wirtschaftlicher ist als viele denken.',
     publishedAt: '2025-04-10',
@@ -87,7 +87,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'stromspeicher-pv-anlage-lohnt-sich',
     title: 'Stromspeicher für Photovoltaikanlagen – Lohnt er sich?',
-    metaTitle: 'Stromspeicher für PV-Anlage 2025 – Lohnt sich der Kauf? | A3-Watt',
+    metaTitle: 'Stromspeicher für PV-Anlage 2025 – Lohnt sich der Kauf? | PV-Hamburg',
     metaDescription:
       'Ein Stromspeicher erhöht den Eigenverbrauch Ihrer Solaranlage erheblich. Wir erklären, wie ein Speicher funktioniert, was er kostet und wann er sich rechnet.',
     publishedAt: '2025-03-22',
@@ -159,7 +159,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'waermepumpe-photovoltaik-kombination',
     title: 'Wärmepumpe + Photovoltaik – Die ideale Kombination',
-    metaTitle: 'Wärmepumpe + Photovoltaik kombinieren 2025 | A3-Watt Hamburg',
+    metaTitle: 'Wärmepumpe + Photovoltaik kombinieren 2025 | PV-Hamburg Hamburg',
     metaDescription:
       'Wärmepumpe und Solaranlage ergänzen sich perfekt: PV-Strom treibt die Wärmepumpe an und senkt die Heizkosten auf ein Minimum. Wir erklären die Synergie.',
     publishedAt: '2025-02-18',
@@ -226,7 +226,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'photovoltaik-foerderung-hamburg-2025',
     title: 'Photovoltaik Förderung 2025 – Was gibt es in Hamburg?',
-    metaTitle: 'Photovoltaik Förderung Hamburg 2025 – Alle Zuschüsse im Überblick | A3-Watt',
+    metaTitle: 'Photovoltaik Förderung Hamburg 2025 – Alle Zuschüsse im Überblick | PV-Hamburg',
     metaDescription:
       'Welche Förderungen gibt es 2025 für Photovoltaik in Hamburg? Wir erklären EEG-Vergütung, IFB-Darlehen, die 0-%-Umsatzsteuer und weitere aktuelle Förderoptionen.',
     publishedAt: '2025-05-05',
@@ -301,7 +301,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'photovoltaik-wartung-tipps',
     title: 'Photovoltaikanlage warten – Was Betreiber wissen sollten',
-    metaTitle: 'PV-Anlage warten 2025 – Tipps & Intervalle für Hamburger Hausbesitzer | A3-Watt',
+    metaTitle: 'PV-Anlage warten 2025 – Tipps & Intervalle für Hamburger Hausbesitzer | PV-Hamburg',
     metaDescription:
       'Wie wartet man eine Photovoltaikanlage richtig? Wir erklären Reinigungsintervalle, was eine Jahresinspektion prüft und wie Sie den Ertrag langfristig sichern.',
     publishedAt: '2025-01-30',

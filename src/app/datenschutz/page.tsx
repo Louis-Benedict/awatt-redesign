@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Datenschutzerklärung | A3-Watt Elektrotechnik',
+  title: 'Datenschutzerklärung | PV-Hamburg Elektrotechnik',
   description: 'Datenschutzerklärung von pv-hh.de gemäß DSGVO.',
 };
 
@@ -19,7 +19,7 @@ export default function DatenschutzPage() {
             EU-Datenschutzgrundverordnung (DSGVO), ist:
           </p>
           <div className="mt-2 space-y-0.5">
-            <p className="font-medium text-slate-800">A3-Watt Elektrotechnik</p>
+            <p className="font-medium text-slate-800">PV-Hamburg Elektrotechnik</p>
             <p>Ahmad Awat Ahmad</p>
             <p>Stintenburger Weg 1</p>
             <p>23909 Ratzeburg</p>

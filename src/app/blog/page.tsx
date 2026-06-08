@@ -3,11 +3,11 @@ import Link from 'next/link';
 import { blogPosts, formatDate, categorySlugMap } from '@/lib/blog';
 
 export const metadata: Metadata = {
-  title: 'Blog & Ratgeber – Photovoltaik, Wärmepumpe & Solar Hamburg | A3-Watt',
+  title: 'Blog & Ratgeber – Photovoltaik, Wärmepumpe & Solar Hamburg | PV-Hamburg',
   description:
     'Wissenswertes rund um Photovoltaik, Stromspeicher und Wärmepumpen in Hamburg. Ratgeber, Tipps und aktuelle Informationen für Hausbesitzer.',
   openGraph: {
-    title: 'Blog & Ratgeber – A3-Watt Hamburg',
+    title: 'Blog & Ratgeber – PV-Hamburg Hamburg',
     description:
       'Wissenswertes rund um Photovoltaik, Stromspeicher und Wärmepumpen in Hamburg.',
     type: 'website',

@@ -5,9 +5,9 @@ import { CheckCircle2, Zap, ShieldCheck, ClipboardList, SunMedium, BarChart3 } f
 import FaqAccordion from '@/components/FaqAccordion';
 
 export const metadata: Metadata = {
-  title: 'Photovoltaik Hamburg – PV-Anlage kaufen & installieren | A3-Watt',
+  title: 'Photovoltaik Hamburg – PV-Anlage kaufen & installieren | PV-Hamburg',
   description:
-    'Photovoltaikanlage in Hamburg kaufen & installieren lassen. A3-Watt Elektrotechnik – Festpreisangebote ab 11.460 €, Netzanmeldung inklusive, 30 Jahre Modulgarantie.',
+    'Photovoltaikanlage in Hamburg kaufen & installieren lassen. PV-Hamburg Elektrotechnik – Festpreisangebote ab 11.460 €, Netzanmeldung inklusive, 30 Jahre Modulgarantie.',
 };
 
 const faqItems = [
@@ -75,7 +75,7 @@ export default function PhotovoltaikPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <span className="inline-block bg-white/10 text-white/80 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm border border-white/20">
-              A3-Watt Elektrotechnik · Hamburg & Umgebung
+              PV-Hamburg Elektrotechnik · Hamburg & Umgebung
             </span>
             <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight">
               Photovoltaik

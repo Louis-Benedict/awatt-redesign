@@ -15,31 +15,31 @@ export const metadata: Metadata = {
 const pakete = [
   {
     name: 'Paket S',
-    price: 'ab 11.460 €',
+    price: 'ab 13.440 €',
     area: '35 m²',
     consumption: 'ab 2.000 kWh',
-    system: '16 Module ca. 7,04 kWp',
+    system: '15 Module ca. 7,2 kWp',
   },
   {
     name: 'Paket M',
-    price: 'ab 12.340 €',
+    price: 'ab 15.464 €',
     area: '45 m²',
     consumption: 'ab 3.000 kWh',
-    system: '19 Module ca. 8,36 kWp',
+    system: '19 Module ca. 9,12 kWp',
   },
   {
     name: 'Paket L',
-    price: 'ab 13.020 €',
+    price: 'ab 16.792 €',
     area: '55 m²',
     consumption: 'ab 4.000 kWh',
-    system: '22 Module ca. 9,68 kWp',
+    system: '22 Module ca. 10,56 kWp',
   },
   {
     name: 'Paket XL',
-    price: 'ab 14.100 €',
+    price: 'ab 18.500 €',
     area: '65 m²',
     consumption: 'ab 5.500 kWh',
-    system: '25 Module ca. 10,25 kWp',
+    system: '25 Module ca. 12 kWp',
   },
 ];
 
