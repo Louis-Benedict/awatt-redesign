@@ -3,6 +3,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ShieldCheck, Zap, ClipboardList, BadgeCheck, Home, Sun, ArrowRight } from 'lucide-react';
 import ProzessSection from '@/components/ProzessSection';
+import HemsSection from '@/components/HemsSection';
+import ProdukteSection from '@/components/ProdukteSection';
+import ReferenzenGallery from '@/components/ReferenzenGallery';
 
 export const metadata: Metadata = {
   title: 'PV-Hamburg – Marktführer für Photovoltaik Anlagen Hamburg',
@@ -125,7 +128,7 @@ export default function HomePage() {
               >
                 <Image src="/logo.png" alt="PV Hamburg" width={32} height={32} className="h-8 w-auto" priority />
                 <span className="text-sm font-medium text-white/80">
-                  Photovoltaik Hamburg
+                  PV Hamburg
                 </span>
               </div>
 
@@ -238,7 +241,7 @@ export default function HomePage() {
             </div>
             <div>
               <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#3B7DD8' }}>
-                PV-Hamburg Elektrotechnik
+                PV-Hamburg
               </p>
               <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6" style={{ color: '#1E293B' }}>
                 Wir installieren Ihre Solaranlage in Hamburg
@@ -287,6 +290,9 @@ export default function HomePage() {
 
         </div>
       </section>
+
+      {/* ── Produkte ──────────────────────────────────────────────────────── */}
+      <ProdukteSection />
 
       {/* ── Pakete ────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden py-28">
@@ -351,7 +357,7 @@ export default function HomePage() {
 
                 {/* Price button */}
                 <Link
-                  href="/kontakt"
+                  href={`/kontakt?betreff=${p.name.toLowerCase().replace(' ', '-')}`}
                   className="mt-2 flex items-center justify-center gap-2 font-bold py-3 rounded-full text-white transition-all duration-200 hover:brightness-110"
                   style={{ background: '#3B7DD8', boxShadow: '0 4px 16px rgba(59,125,216,0.4)' }}
                 >
@@ -370,6 +376,9 @@ export default function HomePage() {
 
       {/* ── Der Prozess ───────────────────────────────────────────────────── */}
       <ProzessSection />
+
+      {/* ── HEMS ──────────────────────────────────────────────────────────── */}
+      <HemsSection />
 
       {/* ── Versprechen ───────────────────────────────────────────────────── */}
       <section style={{ background: '#F5F8FC' }} className="py-24">
@@ -426,6 +435,9 @@ export default function HomePage() {
         </div>
       </section> */}
 
+
+      {/* ── Referenzen ────────────────────────────────────────────────────── */}
+      <ReferenzenGallery />
 
       {/* ── CTA ───────────────────────────────────────────────────────────── */}
       <section

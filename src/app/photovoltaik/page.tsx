@@ -5,9 +5,9 @@ import { CheckCircle2, Zap, ShieldCheck, ClipboardList, SunMedium, BarChart3 } f
 import FaqAccordion from '@/components/FaqAccordion';
 
 export const metadata: Metadata = {
-  title: 'Photovoltaik Hamburg – PV-Anlage kaufen & installieren | PV-Hamburg',
+  title: 'PV Hamburg – PV-Anlage kaufen & installieren | PV-Hamburg',
   description:
-    'Photovoltaikanlage in Hamburg kaufen & installieren lassen. PV-Hamburg Elektrotechnik – Festpreisangebote ab 11.460 €, Netzanmeldung inklusive, 30 Jahre Modulgarantie.',
+    'Photovoltaikanlage in Hamburg kaufen & installieren lassen. PV-Hamburg – Festpreisangebote ab 11.460 €, Netzanmeldung inklusive, 30 Jahre Modulgarantie.',
 };
 
 const faqItems = [
@@ -47,9 +47,9 @@ const included = [
   { icon: <ClipboardList className="w-5 h-5" />, label: 'Kostenlose Beratung & Planung' },
   { icon: <SunMedium className="w-5 h-5" />, label: 'Dachmontage & Elektroinstallation' },
   { icon: <CheckCircle2 className="w-5 h-5" />, label: 'Netzanmeldung beim Netzbetreiber' },
-  { icon: <CheckCircle2 className="w-5 h-5" />, label: 'Anmeldung beim Finanzamt' },
-  { icon: <Zap className="w-5 h-5" />, label: 'Inbetriebnahme & persönliche Einweisung' },
-  { icon: <BarChart3 className="w-5 h-5" />, label: 'App-Monitoring & Ertragsüberwachung' },
+  { icon: <CheckCircle2 className="w-5 h-5" />, label: 'Anmeldung beim Marktstammdatenregister' },
+  { icon: <Zap className="w-5 h-5" />, label: 'Energiemanagement' },
+  { icon: <BarChart3 className="w-5 h-5" />, label: 'Notstrombox' },
   { icon: <ShieldCheck className="w-5 h-5" />, label: '30 Jahre Produktgarantie auf Module' },
   { icon: <ShieldCheck className="w-5 h-5" />, label: 'Versicherter Installationsbetrieb' },
 ];
@@ -75,7 +75,7 @@ export default function PhotovoltaikPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <span className="inline-block bg-white/10 text-white/80 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm border border-white/20">
-              PV-Hamburg Elektrotechnik · Hamburg & Umgebung
+              PV-Hamburg · Hamburg & Umgebung
             </span>
             <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight">
               Photovoltaik
@@ -127,7 +127,7 @@ export default function PhotovoltaikPage() {
           <div className="grid md:grid-cols-2 gap-14 items-center">
             <div>
               <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#3B7DD8' }}>
-                Photovoltaik Hamburg
+                PV Hamburg
               </p>
               <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-5" style={{ color: '#1E293B' }}>
                 Warum jetzt der richtige Zeitpunkt ist

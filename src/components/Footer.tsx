@@ -120,7 +120,7 @@ export default function Footer() {
           className="mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs"
           style={{ borderTop: '1px solid rgba(255,255,255,0.06)', color: '#475569' }}
         >
-          <p>© {new Date().getFullYear()} PV-Hamburg Elektrotechnik — Alle Rechte vorbehalten</p>
+          <p>© {new Date().getFullYear()} PV-Hamburg — Alle Rechte vorbehalten</p>
           <div className="flex gap-6">
             <Link href="/impressum" className="hover:text-brand-400 transition-colors">Impressum</Link>
             <Link href="/datenschutz" className="hover:text-brand-400 transition-colors">Datenschutz</Link>

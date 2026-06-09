@@ -105,7 +105,7 @@ export default function Home2Page() {
               >
                 <Image src="/logo.png" alt="PV Hamburg" width={32} height={32} className="h-8 w-auto" priority />
                 <span className="text-sm font-medium text-white/80">
-                  Photovoltaik Hamburg
+                  PV Hamburg
                 </span>
               </div>
 

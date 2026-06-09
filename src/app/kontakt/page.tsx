@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import KontaktForm from '@/components/KontaktForm';
 
 export const metadata: Metadata = {
   title: 'Kontakt – Sprechen Sie uns an',
@@ -6,7 +7,12 @@ export const metadata: Metadata = {
     'Nehmen Sie Kontakt mit uns auf. Kostenlose und unverbindliche Beratung zu Photovoltaik und Wärmepumpen in Hamburg.',
 };
 
-export default function KontaktPage() {
+export default async function KontaktPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ betreff?: string }>;
+}) {
+  const { betreff } = await searchParams;
   return (
     <>
       {/* Hero */}
@@ -95,119 +101,7 @@ export default function KontaktPage() {
             {/* Contact form */}
             <div>
               <h2 className="text-2xl font-bold text-slate-900 mb-6">Nachricht senden</h2>
-              <form className="space-y-5">
-                {/* Subject */}
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-1.5">
-                    Betreff
-                  </label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
-                  >
-                    <option value="">Bitte wählen…</option>
-                    <option value="photovoltaik">Photovoltaik</option>
-                    <option value="waermepumpe">Wärmepumpe</option>
-                    <option value="sonstiges">Sonstiges</option>
-                  </select>
-                </div>
-
-                {/* Name */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-1.5">
-                      Vorname
-                    </label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
-                      placeholder="Max"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-1.5">
-                      Nachname
-                    </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
-                      placeholder="Mustermann"
-                    />
-                  </div>
-                </div>
-
-                {/* Email */}
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1.5">
-                    E-Mail-Adresse
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
-                    placeholder="max@beispiel.de"
-                  />
-                </div>
-
-                {/* Phone */}
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-1.5">
-                    Telefon <span className="text-slate-400 font-normal">(optional)</span>
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
-                    placeholder="0176 ..."
-                  />
-                </div>
-
-                {/* Message */}
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1.5">
-                    Ihre Nachricht
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent resize-none"
-                    placeholder="Schildern Sie Ihr Vorhaben oder stellen Sie Ihre Fragen…"
-                  />
-                </div>
-
-                {/* Privacy checkbox */}
-                <div className="flex items-start gap-3">
-                  <input
-                    type="checkbox"
-                    id="privacy"
-                    name="privacy"
-                    className="mt-0.5 w-4 h-4 accent-brand-500"
-                  />
-                  <label htmlFor="privacy" className="text-sm text-slate-600">
-                    Ich habe die{' '}
-                    <a href="/datenschutz" className="text-brand-600 hover:underline">
-                      Datenschutzerklärung
-                    </a>{' '}
-                    gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung
-                    meiner Anfrage zu.
-                  </label>
-                </div>
-
-                <button
-                  type="submit"
-                  className="btn-primary w-full text-center"
-                >
-                  Nachricht senden
-                </button>
-              </form>
+              <KontaktForm defaultBetreff={betreff ?? ''} />
             </div>
           </div>
         </div>

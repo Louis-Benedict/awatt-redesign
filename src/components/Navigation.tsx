@@ -13,6 +13,13 @@ const leistungen = [
   { href: '/solarcheck', label: 'Solarcheck' },
 ];
 
+const produkte = [
+  { href: '/produkte/alfred-10', label: 'Alfred 10' },
+  { href: '/produkte/notstrombox', label: 'Notstrombox' },
+  { href: '/produkte/solyco-r-bg', label: 'SOLYCO R-BG 108nBC.6' },
+  { href: '/produkte/hems-pro', label: 'HEMS PRO' },
+];
+
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/ueber-uns', label: 'Über Uns' },
@@ -20,13 +27,16 @@ const navLinks = [
 ];
 
 const leistungenHrefs = new Set(leistungen.map((l) => l.href));
+const produkteHrefs = new Set(produkte.map((p) => p.href));
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [leistungenOpen, setLeistungenOpen] = useState(false);
+  const [produkteOpen, setProdukteOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const produkteRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -39,12 +49,16 @@ export default function Navigation() {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setLeistungenOpen(false);
       }
+      if (produkteRef.current && !produkteRef.current.contains(e.target as Node)) {
+        setProdukteOpen(false);
+      }
     };
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   const leistungenActive = leistungenHrefs.has(pathname);
+  const produkteActive = produkteHrefs.has(pathname);
 
   return (
     <nav
@@ -111,6 +125,49 @@ export default function Navigation() {
                       key={link.href}
                       href={link.href}
                       onClick={() => setLeistungenOpen(false)}
+                      className="block px-4 py-2.5 text-sm font-medium transition-colors duration-150 rounded-lg mx-1"
+                      style={{
+                        color: pathname === link.href ? '#3B7DD8' : '#475569',
+                        background: pathname === link.href ? 'rgba(59,125,216,0.07)' : 'transparent',
+                      }}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Produkte dropdown */}
+            <div className="relative" ref={produkteRef}>
+              <button
+                onClick={() => setProdukteOpen((v) => !v)}
+                className="flex items-center gap-1 text-sm font-medium transition-colors duration-200"
+                style={{ color: produkteActive ? '#3B7DD8' : '#475569' }}
+              >
+                Produkte
+                <ChevronDown
+                  className="w-3.5 h-3.5 transition-transform duration-200"
+                  style={{ transform: produkteOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                />
+              </button>
+
+              {produkteOpen && (
+                <div
+                  className="absolute top-full left-1/2 mt-3 w-56 rounded-xl py-2 -translate-x-1/2"
+                  style={{
+                    background: 'rgba(255,255,255,0.92)',
+                    backdropFilter: 'blur(24px) saturate(180%)',
+                    WebkitBackdropFilter: 'blur(24px) saturate(180%)',
+                    border: '1px solid rgba(255,255,255,0.7)',
+                    boxShadow: '0 8px 32px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06)',
+                  }}
+                >
+                  {produkte.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setProdukteOpen(false)}
                       className="block px-4 py-2.5 text-sm font-medium transition-colors duration-150 rounded-lg mx-1"
                       style={{
                         color: pathname === link.href ? '#3B7DD8' : '#475569',
@@ -205,6 +262,42 @@ export default function Navigation() {
                         color: pathname === link.href ? '#2D68C4' : '#64748B',
                       }}
                       onClick={() => { setIsOpen(false); setLeistungenOpen(false); }}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Mobile Produkte expandable */}
+            <div>
+              <button
+                onClick={() => setProdukteOpen((v) => !v)}
+                className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-colors"
+                style={{
+                  background: produkteActive ? 'rgba(59,125,216,0.08)' : 'transparent',
+                  color: produkteActive ? '#2D68C4' : '#475569',
+                }}
+              >
+                Produkte
+                <ChevronDown
+                  className="w-4 h-4 transition-transform duration-200"
+                  style={{ transform: produkteOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                />
+              </button>
+              {produkteOpen && (
+                <div className="ml-4 mt-1 flex flex-col gap-0.5">
+                  {produkte.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="px-3 py-2 rounded-xl text-sm font-medium transition-colors"
+                      style={{
+                        background: pathname === link.href ? 'rgba(59,125,216,0.08)' : 'transparent',
+                        color: pathname === link.href ? '#2D68C4' : '#64748B',
+                      }}
+                      onClick={() => { setIsOpen(false); setProdukteOpen(false); }}
                     >
                       {link.label}
                     </Link>

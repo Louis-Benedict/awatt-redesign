@@ -8,13 +8,13 @@ const steps = [
   {
     num: 1,
     label: 'Beratung',
-    image: '/images/step-beratung.png',
+    image: '/images/step-planung.png',
     desc: 'Wir analysieren Ihren Stromverbrauch, Ihre Dachfläche und Ihre Ziele, um die passende PV-Lösung für Sie zu finden.',
   },
   {
     num: 2,
     label: 'Planung',
-    image: '/images/step-planung.png',
+    image: '/images/step-beratung.png',
     desc: 'Unsere Experten planen Ihre PV-Anlage individuell – inklusive Module, Wechselrichter, Speicher und optimaler Ausrichtung.',
   },
   {
