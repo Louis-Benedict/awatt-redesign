@@ -44,7 +44,7 @@ export default function BlogTOC({ items }: { items: TocItem[] }) {
               className="block pl-4 py-0.5 leading-snug border-l-2 -ml-px transition-colors"
               style={
                 activeId === id
-                  ? { borderColor: '#3B7DD8', color: '#3B7DD8', fontWeight: 600 }
+                  ? { borderColor: '#1B8C4D', color: '#1B8C4D', fontWeight: 600 }
                   : { borderColor: 'transparent', color: '#94A3B8' }
               }
             >

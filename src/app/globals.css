@@ -8,7 +8,7 @@
   }
 
   body {
-    background-color: #F5F8FC;
+    background-color: #F3F9F5;
     color: #1E293B;
     -webkit-font-smoothing: antialiased;
   }
@@ -24,20 +24,20 @@
   .btn-primary {
     @apply inline-block bg-brand-500 text-white font-semibold px-7 py-3 rounded-xl
            hover:bg-brand-600 active:scale-[0.98] transition-all duration-200;
-    box-shadow: 0 4px 20px rgba(59, 125, 216, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    box-shadow: 0 4px 20px rgba(27, 107, 56, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.18);
   }
 
   .btn-outline {
     @apply inline-block font-semibold px-7 py-3 rounded-xl transition-all duration-200;
-    border: 1px solid rgba(59, 125, 216, 0.35);
-    color: #2D68C4;
-    background: rgba(59, 125, 216, 0.05);
+    border: 1px solid rgba(27, 107, 56, 0.35);
+    color: #1B6B38;
+    background: rgba(27, 107, 56, 0.05);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
   .btn-outline:hover {
-    background: rgba(59, 125, 216, 0.12);
-    border-color: rgba(59, 125, 216, 0.5);
+    background: rgba(27, 107, 56, 0.12);
+    border-color: rgba(27, 107, 56, 0.5);
   }
 
   /* ── Typography helpers ──────────────────────────────────────────── */
@@ -78,15 +78,15 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.07);
   }
 
-  /* Amber-tinted glass — for brand accent cards on light bg */
+  /* Green-tinted glass — for brand accent cards on light bg */
   .glass-amber {
     @apply rounded-xl p-6;
-    background: rgba(59, 125, 216, 0.06);
+    background: rgba(27, 107, 56, 0.06);
     backdrop-filter: blur(20px) saturate(160%);
     -webkit-backdrop-filter: blur(20px) saturate(160%);
-    border: 1px solid rgba(59, 125, 216, 0.18);
+    border: 1px solid rgba(27, 107, 56, 0.18);
     box-shadow:
-      0 4px 24px rgba(59, 125, 216, 0.08),
+      0 4px 24px rgba(27, 107, 56, 0.08),
       inset 0 1px 0 rgba(255, 255, 255, 0.75);
   }
 

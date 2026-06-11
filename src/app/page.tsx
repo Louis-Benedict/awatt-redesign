@@ -90,7 +90,7 @@ export default function HomePage() {
   return (
     <>
       {/* ── Hero card ─────────────────────────────────────────────────────── */}
-      <div className="px-3 sm:px-5 pt-4 pb-0" style={{ background: '#F5F8FC' }}>
+      <div className="px-3 sm:px-5 pt-4 pb-0" style={{ background: '#F3F9F5' }}>
         <section
           className="relative overflow-hidden flex items-center rounded-2xl"
           style={{ minHeight: '70vh' }}
@@ -134,7 +134,7 @@ export default function HomePage() {
 
               <h1 className="text-4xl md:text-5xl font-bold leading-[1.06] mb-5 text-white">
                 Jetzt effizient{' '}
-                <span style={{ color: '#60A5FA' }}>Energie&nbsp;sparen</span>
+                <span style={{ color: '#35B475' }}>Energie&nbsp;sparen</span>
               </h1>
 
               <p className="text-xl font-light mb-3 text-white/80">
@@ -169,7 +169,7 @@ export default function HomePage() {
       </div>{/* /hero card wrapper */}
 
       {/* ── USP strip ─────────────────────────────────────────────────────── */}
-      <section style={{ background: '#EEF3FA', borderTop: '1px solid rgba(0,0,0,0.05)' }}>
+      <section style={{ background: '#EDF6F1', borderTop: '1px solid rgba(0,0,0,0.05)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <div className="flex flex-wrap justify-center gap-8 text-sm font-medium" style={{ color: '#94A3B8' }}>
             {['Direkt Geld sparen', 'Unabhängig sein', 'Qualität & Zuverlässigkeit', '1 Ansprechpartner – von Anfang bis Ende'].map((item) => (
@@ -183,12 +183,12 @@ export default function HomePage() {
       </section>
 
       {/* ── Hamburg aufgepasst ────────────────────────────────────────────── */}
-      <section style={{ background: '#F5F8FC' }} className="py-24">
+      <section style={{ background: '#F3F9F5' }} className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#3B7DD8' }}>
-                Hamburg aufgepasst
+              <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#1B8C4D' }}>
+                Hamburg und Umgebung aufgepasst
               </p>
               <h2 className="section-title text-3xl md:text-4xl leading-tight">
                 Qualität aus<br />einer Hand
@@ -204,9 +204,9 @@ export default function HomePage() {
             <div className="rounded-xl p-8" style={glassCard}>
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                style={{ background: 'rgba(59,125,216,0.09)', border: '1px solid rgba(59,125,216,0.18)' }}
+                style={{ background: 'rgba(27,140,77,0.09)', border: '1px solid rgba(27,140,77,0.18)' }}
               >
-                <svg className="w-6 h-6" fill="none" stroke="#3B7DD8" viewBox="0 0 24 24">
+                <svg className="w-6 h-6" fill="none" stroke="#1B8C4D" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8}
                     d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
@@ -240,7 +240,7 @@ export default function HomePage() {
               </div>
             </div>
             <div>
-              <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#3B7DD8' }}>
+              <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#1B8C4D' }}>
                 PV-Hamburg
               </p>
               <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6" style={{ color: '#1E293B' }}>
@@ -260,7 +260,7 @@ export default function HomePage() {
           {/* Row 2: text left, image right */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
-              <p className="text-sm font-semibold mb-4" style={{ color: '#3B7DD8' }}>
+              <p className="text-sm font-semibold mb-4" style={{ color: '#1B8C4D' }}>
                 Ein Ansprechpartner – Von Anfang bis Ende
               </p>
               <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6" style={{ color: '#1E293B' }}>
@@ -359,7 +359,7 @@ export default function HomePage() {
                 <Link
                   href={`/kontakt?betreff=${p.name.toLowerCase().replace(' ', '-')}`}
                   className="mt-2 flex items-center justify-center gap-2 font-bold py-3 rounded-full text-white transition-all duration-200 hover:brightness-110"
-                  style={{ background: '#3B7DD8', boxShadow: '0 4px 16px rgba(59,125,216,0.4)' }}
+                  style={{ background: '#1B8C4D', boxShadow: '0 4px 16px rgba(27,140,77,0.4)' }}
                 >
                   <ArrowRight className="w-4 h-4" />
                   {p.price}
@@ -379,35 +379,11 @@ export default function HomePage() {
 
       {/* ── HEMS ──────────────────────────────────────────────────────────── */}
       <HemsSection />
-
-      {/* ── Versprechen ───────────────────────────────────────────────────── */}
-      <section style={{ background: '#F5F8FC' }} className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <h2 className="section-title text-3xl">Unser Versprechen an Sie</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {trustBadges.map((b) => (
-              <div key={b.title} className="rounded-xl p-7 text-center" style={glassCard}>
-                <div
-                  className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-5 text-brand-500"
-                  style={{ background: 'rgba(59,125,216,0.08)', border: '1px solid rgba(59,125,216,0.15)' }}
-                >
-                  {b.icon}
-                </div>
-                <h3 className="font-bold mb-2" style={{ color: '#1E293B' }}>{b.title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#64748B' }}>{b.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Testimonials ──────────────────────────────────────────────────── */}
       {/* <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#3B7DD8' }}>
+            <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#1B8C4D' }}>
               Kundenstimmen
             </p>
             <h2 className="section-title text-3xl">Was unsere Kunden sagen</h2>
@@ -442,7 +418,7 @@ export default function HomePage() {
       {/* ── CTA ───────────────────────────────────────────────────────────── */}
       <section
         className="relative overflow-hidden py-24"
-        style={{ background: 'linear-gradient(135deg, #3B7DD8 0%, #2D68C4 60%, #3B7DD8 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #1B8C4D 0%, #1B6B38 60%, #1B8C4D 100%)' }}
       >
         {/* Soft highlight overlay */}
         <div className="pointer-events-none absolute inset-0" style={{
@@ -462,7 +438,7 @@ export default function HomePage() {
               className="inline-block font-bold px-9 py-4 rounded-xl transition-all duration-200"
               style={{
                 background: 'rgba(255,255,255,0.95)',
-                color: '#2D68C4',
+                color: '#1B6B38',
                 boxShadow: '0 4px 24px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,1)',
               }}
             >

@@ -9,7 +9,6 @@ import { ChevronDown } from 'lucide-react';
 const leistungen = [
   { href: '/photovoltaik', label: 'PV-Anlage' },
   { href: '/waermepumpe', label: 'Wärmepumpe' },
-  { href: '/stromspeicher', label: 'Stromspeicher' },
   { href: '/solarcheck', label: 'Solarcheck' },
 ];
 
@@ -90,7 +89,7 @@ export default function Navigation() {
             <Link
               href="/"
               className="text-sm font-medium transition-colors duration-200"
-              style={{ color: pathname === '/' ? '#3B7DD8' : '#475569' }}
+              style={{ color: pathname === '/' ? '#1B8C4D' : '#475569' }}
             >
               Home
             </Link>
@@ -100,7 +99,7 @@ export default function Navigation() {
               <button
                 onClick={() => setLeistungenOpen((v) => !v)}
                 className="flex items-center gap-1 text-sm font-medium transition-colors duration-200"
-                style={{ color: leistungenActive ? '#3B7DD8' : '#475569' }}
+                style={{ color: leistungenActive ? '#1B8C4D' : '#475569' }}
               >
                 Leistungen
                 <ChevronDown
@@ -127,8 +126,8 @@ export default function Navigation() {
                       onClick={() => setLeistungenOpen(false)}
                       className="block px-4 py-2.5 text-sm font-medium transition-colors duration-150 rounded-lg mx-1"
                       style={{
-                        color: pathname === link.href ? '#3B7DD8' : '#475569',
-                        background: pathname === link.href ? 'rgba(59,125,216,0.07)' : 'transparent',
+                        color: pathname === link.href ? '#1B8C4D' : '#475569',
+                        background: pathname === link.href ? 'rgba(27,140,77,0.07)' : 'transparent',
                       }}
                     >
                       {link.label}
@@ -143,7 +142,7 @@ export default function Navigation() {
               <button
                 onClick={() => setProdukteOpen((v) => !v)}
                 className="flex items-center gap-1 text-sm font-medium transition-colors duration-200"
-                style={{ color: produkteActive ? '#3B7DD8' : '#475569' }}
+                style={{ color: produkteActive ? '#1B8C4D' : '#475569' }}
               >
                 Produkte
                 <ChevronDown
@@ -170,8 +169,8 @@ export default function Navigation() {
                       onClick={() => setProdukteOpen(false)}
                       className="block px-4 py-2.5 text-sm font-medium transition-colors duration-150 rounded-lg mx-1"
                       style={{
-                        color: pathname === link.href ? '#3B7DD8' : '#475569',
-                        background: pathname === link.href ? 'rgba(59,125,216,0.07)' : 'transparent',
+                        color: pathname === link.href ? '#1B8C4D' : '#475569',
+                        background: pathname === link.href ? 'rgba(27,140,77,0.07)' : 'transparent',
                       }}
                     >
                       {link.label}
@@ -186,7 +185,7 @@ export default function Navigation() {
                 key={link.href}
                 href={link.href}
                 className="text-sm font-medium transition-colors duration-200"
-                style={{ color: pathname === link.href ? '#3B7DD8' : '#475569' }}
+                style={{ color: pathname === link.href ? '#1B8C4D' : '#475569' }}
               >
                 {link.label}
               </Link>
@@ -226,8 +225,8 @@ export default function Navigation() {
               href="/"
               className="px-3 py-2.5 rounded-xl text-sm font-medium transition-colors"
               style={{
-                background: pathname === '/' ? 'rgba(59,125,216,0.08)' : 'transparent',
-                color: pathname === '/' ? '#2D68C4' : '#475569',
+                background: pathname === '/' ? 'rgba(27,140,77,0.08)' : 'transparent',
+                color: pathname === '/' ? '#1B6B38' : '#475569',
               }}
               onClick={() => setIsOpen(false)}
             >
@@ -240,8 +239,8 @@ export default function Navigation() {
                 onClick={() => setLeistungenOpen((v) => !v)}
                 className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-colors"
                 style={{
-                  background: leistungenActive ? 'rgba(59,125,216,0.08)' : 'transparent',
-                  color: leistungenActive ? '#2D68C4' : '#475569',
+                  background: leistungenActive ? 'rgba(27,140,77,0.08)' : 'transparent',
+                  color: leistungenActive ? '#1B6B38' : '#475569',
                 }}
               >
                 Leistungen
@@ -258,8 +257,8 @@ export default function Navigation() {
                       href={link.href}
                       className="px-3 py-2 rounded-xl text-sm font-medium transition-colors"
                       style={{
-                        background: pathname === link.href ? 'rgba(59,125,216,0.08)' : 'transparent',
-                        color: pathname === link.href ? '#2D68C4' : '#64748B',
+                        background: pathname === link.href ? 'rgba(27,140,77,0.08)' : 'transparent',
+                        color: pathname === link.href ? '#1B6B38' : '#64748B',
                       }}
                       onClick={() => { setIsOpen(false); setLeistungenOpen(false); }}
                     >
@@ -276,8 +275,8 @@ export default function Navigation() {
                 onClick={() => setProdukteOpen((v) => !v)}
                 className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-colors"
                 style={{
-                  background: produkteActive ? 'rgba(59,125,216,0.08)' : 'transparent',
-                  color: produkteActive ? '#2D68C4' : '#475569',
+                  background: produkteActive ? 'rgba(27,140,77,0.08)' : 'transparent',
+                  color: produkteActive ? '#1B6B38' : '#475569',
                 }}
               >
                 Produkte
@@ -294,8 +293,8 @@ export default function Navigation() {
                       href={link.href}
                       className="px-3 py-2 rounded-xl text-sm font-medium transition-colors"
                       style={{
-                        background: pathname === link.href ? 'rgba(59,125,216,0.08)' : 'transparent',
-                        color: pathname === link.href ? '#2D68C4' : '#64748B',
+                        background: pathname === link.href ? 'rgba(27,140,77,0.08)' : 'transparent',
+                        color: pathname === link.href ? '#1B6B38' : '#64748B',
                       }}
                       onClick={() => { setIsOpen(false); setProdukteOpen(false); }}
                     >
@@ -312,8 +311,8 @@ export default function Navigation() {
                 href={link.href}
                 className="px-3 py-2.5 rounded-xl text-sm font-medium transition-colors"
                 style={{
-                  background: pathname === link.href ? 'rgba(59,125,216,0.08)' : 'transparent',
-                  color: pathname === link.href ? '#2D68C4' : '#475569',
+                  background: pathname === link.href ? 'rgba(27,140,77,0.08)' : 'transparent',
+                  color: pathname === link.href ? '#1B6B38' : '#475569',
                 }}
                 onClick={() => setIsOpen(false)}
               >

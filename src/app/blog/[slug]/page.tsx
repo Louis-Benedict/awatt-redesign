@@ -83,7 +83,7 @@ function renderBlock(block: ContentBlock, index: number) {
             <li key={i} className="flex items-start gap-2.5">
               <svg
                 className="w-4 h-4 mt-0.5 shrink-0"
-                style={{ color: '#3B7DD8' }}
+                style={{ color: '#1B8C4D' }}
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2.5"
@@ -103,8 +103,8 @@ function renderBlock(block: ContentBlock, index: number) {
           key={index}
           className="rounded-xl p-5"
           style={{
-            background: 'rgba(59,125,216,0.07)',
-            border: '1px solid rgba(59,125,216,0.18)',
+            background: 'rgba(27,140,77,0.07)',
+            border: '1px solid rgba(27,140,77,0.18)',
           }}
         >
           <p className="text-sm leading-relaxed font-medium" style={{ color: '#1E40AF' }}>
@@ -150,14 +150,14 @@ export default async function BlogPostPage({
       />
 
       {/* ── Article header ── */}
-      <div className="px-3 sm:px-5 pt-4 pb-0" style={{ background: '#F5F8FC' }}>
+      <div className="px-3 sm:px-5 pt-4 pb-0" style={{ background: '#F3F9F5' }}>
         <section
           className="relative overflow-hidden rounded-2xl py-20 md:py-24"
           style={{ background: 'linear-gradient(135deg, #0A1228 0%, #12244A 60%, #1A3060 100%)' }}
         >
           <div
             className="absolute inset-0 pointer-events-none"
-            style={{ background: 'radial-gradient(ellipse at 70% 50%, rgba(59,125,216,0.18) 0%, transparent 60%)' }}
+            style={{ background: 'radial-gradient(ellipse at 70% 50%, rgba(27,140,77,0.18) 0%, transparent 60%)' }}
           />
           <div className="relative z-10 max-w-4xl mx-auto px-8 sm:px-12 text-center">
             {/* Breadcrumb */}
@@ -177,7 +177,7 @@ export default async function BlogPostPage({
               <Link
                 href={`/blog/kategorie/${categorySlugMap[post.category] ?? ''}`}
                 className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold transition-opacity hover:opacity-80"
-                style={{ background: 'rgba(59,125,216,0.20)', color: '#93C5FD', border: '1px solid rgba(59,125,216,0.30)' }}
+                style={{ background: 'rgba(27,140,77,0.20)', color: '#6DCFA2', border: '1px solid rgba(27,140,77,0.30)' }}
               >
                 {post.category}
               </Link>
@@ -197,7 +197,7 @@ export default async function BlogPostPage({
       </div>
 
       {/* ── Article body ── */}
-      <section style={{ background: '#F5F8FC' }} className="py-16">
+      <section style={{ background: '#F3F9F5' }} className="py-16">
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:justify-center lg:gap-12 xl:gap-16">
 
@@ -220,7 +220,7 @@ export default async function BlogPostPage({
           {/* ── CTA ── */}
           <div
             className="mt-16 relative overflow-hidden rounded-2xl px-8 py-12 sm:px-12 sm:py-16"
-            style={{ background: 'linear-gradient(135deg, #3B7DD8 0%, #2D68C4 60%, #3B7DD8 100%)' }}
+            style={{ background: 'linear-gradient(135deg, #1B8C4D 0%, #1B6B38 60%, #1B8C4D 100%)' }}
           >
             <div className="pointer-events-none absolute inset-0" style={{
               background: 'radial-gradient(ellipse at 30% 30%, rgba(255,255,255,0.15) 0%, transparent 55%)',
@@ -242,7 +242,7 @@ export default async function BlogPostPage({
                 className="shrink-0 inline-flex items-center justify-center rounded-xl font-bold px-8 py-3.5 text-sm transition-all"
                 style={{
                   background: 'rgba(255,255,255,0.95)',
-                  color: '#2D68C4',
+                  color: '#1B6B38',
                   boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
                 }}
               >
@@ -274,7 +274,7 @@ export default async function BlogPostPage({
                     <div className="flex flex-wrap items-center gap-2 mb-4">
                       <span
                         className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold"
-                        style={{ background: 'rgba(59,125,216,0.10)', color: '#3B7DD8', border: '1px solid rgba(59,125,216,0.18)' }}
+                        style={{ background: 'rgba(27,140,77,0.10)', color: '#1B8C4D', border: '1px solid rgba(27,140,77,0.18)' }}
                       >
                         {r.category}
                       </span>
@@ -284,7 +284,7 @@ export default async function BlogPostPage({
                     <h3 className="text-base font-bold mb-3 leading-snug flex-1" style={{ color: '#1E293B' }}>
                       {r.title}
                     </h3>
-                    <div className="flex items-center gap-1.5 text-sm font-semibold" style={{ color: '#3B7DD8' }}>
+                    <div className="flex items-center gap-1.5 text-sm font-semibold" style={{ color: '#1B8C4D' }}>
                       Weiterlesen
                       <svg
                         className="w-4 h-4 transition-transform group-hover:translate-x-1"

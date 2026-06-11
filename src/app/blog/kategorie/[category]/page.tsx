@@ -45,14 +45,14 @@ export default async function CategoryPage({
   return (
     <>
       {/* ── Hero ── */}
-      <div className="px-3 sm:px-5 pt-4 pb-0" style={{ background: '#F5F8FC' }}>
+      <div className="px-3 sm:px-5 pt-4 pb-0" style={{ background: '#F3F9F5' }}>
         <section
           className="relative overflow-hidden flex items-center rounded-2xl py-20 md:py-28"
           style={{ background: 'linear-gradient(135deg, #0A1228 0%, #12244A 60%, #1A3060 100%)' }}
         >
           <div
             className="absolute inset-0 pointer-events-none"
-            style={{ background: 'radial-gradient(ellipse at 70% 50%, rgba(59,125,216,0.18) 0%, transparent 60%)' }}
+            style={{ background: 'radial-gradient(ellipse at 70% 50%, rgba(27,140,77,0.18) 0%, transparent 60%)' }}
           />
           <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-12 w-full">
             <nav aria-label="Breadcrumb" className="mb-6">
@@ -67,7 +67,7 @@ export default async function CategoryPage({
             <div className="max-w-2xl">
               <div
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-5"
-                style={{ background: 'rgba(59,125,216,0.20)', color: '#93C5FD', border: '1px solid rgba(59,125,216,0.30)' }}
+                style={{ background: 'rgba(27,140,77,0.20)', color: '#6DCFA2', border: '1px solid rgba(27,140,77,0.30)' }}
               >
                 Kategorie
               </div>
@@ -100,8 +100,8 @@ export default async function CategoryPage({
               className="shrink-0 inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium transition-colors"
               style={
                 cat === categoryName
-                  ? { background: '#3B7DD8', color: '#fff', border: '1px solid #3B7DD8' }
-                  : { border: '1px solid rgba(59,125,216,0.25)', color: '#64748B', background: 'rgba(255,255,255,0.7)' }
+                  ? { background: '#1B8C4D', color: '#fff', border: '1px solid #1B8C4D' }
+                  : { border: '1px solid rgba(27,140,77,0.25)', color: '#64748B', background: 'rgba(255,255,255,0.7)' }
               }
             >
               {cat}
@@ -111,7 +111,7 @@ export default async function CategoryPage({
       </div>
 
       {/* ── Post grid ── */}
-      <section style={{ background: '#F5F8FC' }} className="py-16">
+      <section style={{ background: '#F3F9F5' }} className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {filtered.length === 0 ? (
             <p className="text-center py-16" style={{ color: '#64748B' }}>
@@ -129,7 +129,7 @@ export default async function CategoryPage({
                   <div className="flex flex-wrap items-center gap-2 mb-4">
                     <span
                       className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold"
-                      style={{ background: 'rgba(59,125,216,0.10)', color: '#3B7DD8', border: '1px solid rgba(59,125,216,0.18)' }}
+                      style={{ background: 'rgba(27,140,77,0.10)', color: '#1B8C4D', border: '1px solid rgba(27,140,77,0.18)' }}
                     >
                       {post.category}
                     </span>
@@ -146,7 +146,7 @@ export default async function CategoryPage({
                   <p className="text-sm leading-relaxed mb-5 flex-1" style={{ color: '#64748B' }}>
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center gap-1.5 text-sm font-semibold" style={{ color: '#3B7DD8' }}>
+                  <div className="flex items-center gap-1.5 text-sm font-semibold" style={{ color: '#1B8C4D' }}>
                     Weiterlesen
                     <svg
                       className="w-4 h-4 transition-transform group-hover:translate-x-1"

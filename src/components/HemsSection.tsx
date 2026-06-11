@@ -81,7 +81,7 @@ function AmortizationChart() {
       <text x="84" y="50" fontSize="9" fill="#64748B">
         Ohne HEMS
       </text>
-      <line x1="62" y1="61" x2="80" y2="61" stroke="#3B7DD8" strokeWidth="2.5" />
+      <line x1="62" y1="61" x2="80" y2="61" stroke="#1B8C4D" strokeWidth="2.5" />
       <text x="84" y="65" fontSize="9" fill="#64748B">
         Mit HEMS
       </text>
@@ -89,7 +89,7 @@ function AmortizationChart() {
       {/* HEMS curve subtle fill */}
       <path
         d="M 55,29 C 110,30 210,220 282,245 L 480,245 L 55,245 Z"
-        fill="rgba(59,125,216,0.05)"
+        fill="rgba(27,140,77,0.05)"
       />
 
       {/* Without HEMS curve (gray) */}
@@ -105,13 +105,13 @@ function AmortizationChart() {
       <path
         d="M 55,29 C 110,30 210,220 282,245 L 480,245"
         fill="none"
-        stroke="#3B7DD8"
+        stroke="#1B8C4D"
         strokeWidth="2.5"
         strokeLinecap="round"
       />
 
       {/* Dots at amortization points */}
-      <circle cx="282" cy="245" r="5" fill="#3B7DD8" stroke="white" strokeWidth="2" />
+      <circle cx="282" cy="245" r="5" fill="#1B8C4D" stroke="white" strokeWidth="2" />
       <circle cx="387" cy="245" r="5" fill="#94A3B8" stroke="white" strokeWidth="2" />
 
       {/* Green savings badge (top right) */}
@@ -125,8 +125,8 @@ function AmortizationChart() {
       </text>
 
       {/* Blue callout — HEMS annotation */}
-      <line x1="212" y1="217" x2="265" y2="244" stroke="#3B7DD8" strokeWidth="1" strokeDasharray="3,2" />
-      <rect x="152" y="177" width="120" height="38" rx="7" fill="#3B7DD8" />
+      <line x1="212" y1="217" x2="265" y2="244" stroke="#1B8C4D" strokeWidth="1" strokeDasharray="3,2" />
+      <rect x="152" y="177" width="120" height="38" rx="7" fill="#1B8C4D" />
       <text x="212" y="193" textAnchor="middle" fontSize="8.5" fill="white" fontWeight="600">
         *Amortisiert
       </text>
@@ -156,7 +156,7 @@ export default function HemsSection() {
         <div className="mb-14">
           <p
             className="text-sm font-semibold uppercase tracking-widest mb-4"
-            style={{ color: '#3B7DD8' }}
+            style={{ color: '#1B8C4D' }}
           >
             Ohne Zusatzkosten
           </p>
@@ -185,9 +185,9 @@ export default function HemsSection() {
             <div
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-7 self-start text-sm font-semibold"
               style={{
-                background: 'rgba(59,125,216,0.09)',
-                color: '#3B7DD8',
-                border: '1px solid rgba(59,125,216,0.18)',
+                background: 'rgba(27,140,77,0.09)',
+                color: '#1B8C4D',
+                border: '1px solid rgba(27,140,77,0.18)',
               }}
             >
               <CheckCircle className="w-4 h-4" />
@@ -201,7 +201,7 @@ export default function HemsSection() {
               Mit dem HEMS-PRO amortisiert<br />sich Ihre Anlage schneller
             </h3>
 
-            <div className="w-12 h-1 rounded-full mb-6" style={{ background: '#3B7DD8' }} />
+            <div className="w-12 h-1 rounded-full mb-6" style={{ background: '#1B8C4D' }} />
 
             <p className="leading-relaxed text-base mb-8" style={{ color: '#64748B' }}>
               Bei uns rentiert sich jede Anlage schneller. Wir bieten ein nach §14a und §9 EEG
@@ -216,7 +216,7 @@ export default function HemsSection() {
                   className="flex items-center gap-2 text-sm"
                   style={{ color: '#475569' }}
                 >
-                  <CheckCircle className="w-4 h-4 flex-shrink-0" style={{ color: '#3B7DD8' }} />
+                  <CheckCircle className="w-4 h-4 flex-shrink-0" style={{ color: '#1B8C4D' }} />
                   {feat}
                 </div>
               ))}

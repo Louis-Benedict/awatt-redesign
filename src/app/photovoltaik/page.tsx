@@ -113,7 +113,7 @@ export default function PhotovoltaikPage() {
               { value: '30 Jahre', label: 'Modulgarantie' },
             ].map((s) => (
               <div key={s.label}>
-                <div className="text-3xl font-black mb-1" style={{ color: '#3B7DD8' }}>{s.value}</div>
+                <div className="text-3xl font-black mb-1" style={{ color: '#1B8C4D' }}>{s.value}</div>
                 <div className="text-sm text-slate-500">{s.label}</div>
               </div>
             ))}
@@ -126,7 +126,7 @@ export default function PhotovoltaikPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-14 items-center">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#3B7DD8' }}>
+              <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#1B8C4D' }}>
                 PV Hamburg
               </p>
               <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-5" style={{ color: '#1E293B' }}>
@@ -150,7 +150,7 @@ export default function PhotovoltaikPage() {
                   'Wertsteigerung Ihrer Immobilie',
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-sm text-slate-700">
-                    <CheckCircle2 className="w-4 h-4 shrink-0" style={{ color: '#3B7DD8' }} />
+                    <CheckCircle2 className="w-4 h-4 shrink-0" style={{ color: '#1B8C4D' }} />
                     {item}
                   </li>
                 ))}
@@ -169,10 +169,10 @@ export default function PhotovoltaikPage() {
       </section>
 
       {/* ── Leistungsumfang ───────────────────────────────────────────────── */}
-      <section className="py-20" style={{ background: '#F5F8FC' }}>
+      <section className="py-20" style={{ background: '#F3F9F5' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#3B7DD8' }}>
+            <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#1B8C4D' }}>
               Rundum-Sorglos
             </p>
             <h2 className="text-3xl font-bold" style={{ color: '#1E293B' }}>
@@ -189,7 +189,7 @@ export default function PhotovoltaikPage() {
                 key={item.label}
                 className="flex items-center gap-4 rounded-xl px-5 py-4 bg-white border border-slate-100 shadow-sm"
               >
-                <span className="shrink-0" style={{ color: '#3B7DD8' }}>{item.icon}</span>
+                <span className="shrink-0" style={{ color: '#1B8C4D' }}>{item.icon}</span>
                 <span className="text-sm font-medium text-slate-700">{item.label}</span>
               </div>
             ))}
@@ -198,7 +198,7 @@ export default function PhotovoltaikPage() {
       </section>
 
       {/* ── FAQ ───────────────────────────────────────────────────────────── */}
-      <section className="py-20" style={{ background: '#F5F8FC' }}>
+      <section className="py-20" style={{ background: '#F3F9F5' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold" style={{ color: '#1E293B' }}>Häufige Fragen zur PV-Anlage</h2>
@@ -210,7 +210,7 @@ export default function PhotovoltaikPage() {
       {/* ── CTA ───────────────────────────────────────────────────────────── */}
       <section
         className="relative overflow-hidden py-24"
-        style={{ background: 'linear-gradient(135deg, #3B7DD8 0%, #2D68C4 60%, #3B7DD8 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #1B8C4D 0%, #1B6B38 60%, #1B8C4D 100%)' }}
       >
         <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(ellipse at 30% 30%, rgba(255,255,255,0.15) 0%, transparent 55%)' }} />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -225,7 +225,7 @@ export default function PhotovoltaikPage() {
             <Link
               href="/kontakt"
               className="inline-block font-bold px-9 py-4 rounded-xl transition-all duration-200"
-              style={{ background: 'rgba(255,255,255,0.95)', color: '#2D68C4', boxShadow: '0 4px 24px rgba(0,0,0,0.12)' }}
+              style={{ background: 'rgba(255,255,255,0.95)', color: '#1B6B38', boxShadow: '0 4px 24px rgba(0,0,0,0.12)' }}
             >
               Beratungsgespräch anfragen
             </Link>

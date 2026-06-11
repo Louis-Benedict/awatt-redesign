@@ -13,13 +13,13 @@ interface Props {
 
 export default function ProductHero({ category, name, subtitle, paragraphs, specs, image }: Props) {
   return (
-    <section style={{ background: '#F5F8FC' }} className="pt-10 pb-24">
+    <section style={{ background: '#F3F9F5' }} className="pt-10 pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <Link
           href="/#produkte"
           className="inline-flex items-center gap-2 text-sm font-medium mb-12 hover:underline"
-          style={{ color: '#3B7DD8' }}
+          style={{ color: '#1B8C4D' }}
         >
           <ArrowLeft className="w-4 h-4" />
           Alle Produkte
@@ -45,7 +45,7 @@ export default function ProductHero({ category, name, subtitle, paragraphs, spec
           <div>
             <p
               className="text-sm font-semibold uppercase tracking-widest mb-3"
-              style={{ color: '#3B7DD8' }}
+              style={{ color: '#1B8C4D' }}
             >
               {category}
             </p>
@@ -74,7 +74,7 @@ export default function ProductHero({ category, name, subtitle, paragraphs, spec
                   className="flex items-center gap-2 text-sm"
                   style={{ color: '#475569' }}
                 >
-                  <CheckCircle className="w-4 h-4 flex-shrink-0" style={{ color: '#3B7DD8' }} />
+                  <CheckCircle className="w-4 h-4 flex-shrink-0" style={{ color: '#1B8C4D' }} />
                   {spec}
                 </div>
               ))}

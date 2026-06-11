@@ -58,7 +58,7 @@ export default function EmpfehlungsprogrammPage() {
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
-      <div className="px-3 sm:px-5 pt-4 pb-0" style={{ background: '#F5F8FC' }}>
+      <div className="px-3 sm:px-5 pt-4 pb-0" style={{ background: '#F3F9F5' }}>
         <section
           className="relative overflow-hidden flex items-center rounded-2xl"
           style={{ minHeight: '60vh' }}
@@ -100,7 +100,7 @@ export default function EmpfehlungsprogrammPage() {
 
               <h1 className="text-4xl md:text-5xl font-bold leading-[1.06] mb-5 text-white">
                 Empfehlen &amp;{' '}
-                <span style={{ color: '#60A5FA' }}>500&nbsp;€ verdienen</span>
+                <span style={{ color: '#35B475' }}>500&nbsp;€ verdienen</span>
               </h1>
 
               <p className="text-xl font-light mb-3 text-white/80">
@@ -135,7 +135,7 @@ export default function EmpfehlungsprogrammPage() {
       </div>
 
       {/* ── USP strip ─────────────────────────────────────────────────────── */}
-      <section style={{ background: '#EEF3FA', borderTop: '1px solid rgba(0,0,0,0.05)' }}>
+      <section style={{ background: '#EDF6F1', borderTop: '1px solid rgba(0,0,0,0.05)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <div className="flex flex-wrap justify-center gap-8 text-sm font-medium" style={{ color: '#94A3B8' }}>
             {['Direkte Auszahlung', 'Unbegrenzt empfehlen', 'Kostenlose Planung inklusive', 'Kein Aufwand für dich'].map((item) => (
@@ -149,10 +149,10 @@ export default function EmpfehlungsprogrammPage() {
       </section>
 
       {/* ── Reward highlight ──────────────────────────────────────────────── */}
-      <section style={{ background: '#F5F8FC' }} className="py-24">
+      <section style={{ background: '#F3F9F5' }} className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#3B7DD8' }}>
+            <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#1B8C4D' }}>
               Das Angebot
             </p>
             <h2 className="section-title text-3xl">Beide profitieren</h2>
@@ -163,8 +163,8 @@ export default function EmpfehlungsprogrammPage() {
             <div
               className="rounded-2xl p-10 flex flex-col items-center text-center"
               style={{
-                background: 'linear-gradient(135deg, #3B7DD8 0%, #2D68C4 100%)',
-                boxShadow: '0 8px 40px rgba(59,125,216,0.30)',
+                background: 'linear-gradient(135deg, #1B8C4D 0%, #1B6B38 100%)',
+                boxShadow: '0 8px 40px rgba(27,140,77,0.30)',
               }}
             >
               <div
@@ -185,9 +185,9 @@ export default function EmpfehlungsprogrammPage() {
             <div className="rounded-2xl p-10 flex flex-col items-center text-center" style={glassCard}>
               <div
                 className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
-                style={{ background: 'rgba(59,125,216,0.09)', border: '1px solid rgba(59,125,216,0.18)' }}
+                style={{ background: 'rgba(27,140,77,0.09)', border: '1px solid rgba(27,140,77,0.18)' }}
               >
-                <Users className="w-8 h-8" style={{ color: '#3B7DD8' }} />
+                <Users className="w-8 h-8" style={{ color: '#1B8C4D' }} />
               </div>
               <p className="text-5xl font-black mb-2" style={{ color: '#1E293B' }}>500 €</p>
               <p className="text-lg font-semibold mb-4" style={{ color: '#1E293B' }}>für deinen Freund</p>
@@ -214,7 +214,7 @@ export default function EmpfehlungsprogrammPage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#60A5FA' }}>
+            <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#35B475' }}>
               So einfach geht's
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-white">In 3 Schritten zur Prämie</h2>
@@ -239,7 +239,7 @@ export default function EmpfehlungsprogrammPage() {
                   </span>
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
-                    style={{ background: 'rgba(96,165,250,0.15)', border: '1px solid rgba(96,165,250,0.25)', color: '#60A5FA' }}
+                    style={{ background: 'rgba(53,180,117,0.15)', border: '1px solid rgba(53,180,117,0.25)', color: '#35B475' }}
                   >
                     {step.icon}
                   </div>
@@ -255,10 +255,10 @@ export default function EmpfehlungsprogrammPage() {
       </section>
 
       {/* ── Benefits ──────────────────────────────────────────────────────── */}
-      <section style={{ background: '#F5F8FC' }} className="py-24">
+      <section style={{ background: '#F3F9F5' }} className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#3B7DD8' }}>
+            <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#1B8C4D' }}>
               Deine Vorteile
             </p>
             <h2 className="section-title text-3xl">Warum sich Empfehlen lohnt</h2>
@@ -268,7 +268,7 @@ export default function EmpfehlungsprogrammPage() {
               <div key={b.title} className="rounded-xl p-7 text-center" style={glassCard}>
                 <div
                   className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-5"
-                  style={{ background: 'rgba(59,125,216,0.08)', border: '1px solid rgba(59,125,216,0.15)', color: '#3B7DD8' }}
+                  style={{ background: 'rgba(27,140,77,0.08)', border: '1px solid rgba(27,140,77,0.15)', color: '#1B8C4D' }}
                 >
                   {b.icon}
                 </div>
@@ -283,7 +283,7 @@ export default function EmpfehlungsprogrammPage() {
       {/* ── CTA ───────────────────────────────────────────────────────────── */}
       <section
         className="relative overflow-hidden py-24"
-        style={{ background: 'linear-gradient(135deg, #3B7DD8 0%, #2D68C4 60%, #3B7DD8 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #1B8C4D 0%, #1B6B38 60%, #1B8C4D 100%)' }}
       >
         <div className="pointer-events-none absolute inset-0" style={{
           background: 'radial-gradient(ellipse at 30% 30%, rgba(255,255,255,0.15) 0%, transparent 55%)',
@@ -303,7 +303,7 @@ export default function EmpfehlungsprogrammPage() {
               className="inline-flex items-center gap-2 font-bold px-9 py-4 rounded-xl transition-all duration-200"
               style={{
                 background: 'rgba(255,255,255,0.95)',
-                color: '#2D68C4',
+                color: '#1B6B38',
                 boxShadow: '0 4px 24px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,1)',
               }}
             >

@@ -7,13 +7,13 @@ const images = Array.from({ length: 22 }, (_, i) => ({
 
 export default function ReferenzenGallery() {
   return (
-    <section style={{ background: '#F5F8FC' }} className="py-24">
+    <section style={{ background: '#F3F9F5' }} className="py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-14">
           <p
             className="text-sm font-semibold uppercase tracking-widest mb-4"
-            style={{ color: '#3B7DD8' }}
+            style={{ color: '#1B8C4D' }}
           >
             Unsere Arbeit
           </p>
@@ -24,7 +24,7 @@ export default function ReferenzenGallery() {
             Referenzen
             <span
               className="absolute bottom-0 left-0 right-0 rounded-full"
-              style={{ height: '3px', background: '#3B7DD8' }}
+              style={{ height: '3px', background: '#1B8C4D' }}
             />
           </h2>
         </div>

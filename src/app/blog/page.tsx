@@ -28,14 +28,14 @@ export default function BlogPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <div className="px-3 sm:px-5 pt-4 pb-0" style={{ background: '#F5F8FC' }}>
+      <div className="px-3 sm:px-5 pt-4 pb-0" style={{ background: '#F3F9F5' }}>
         <section
           className="relative overflow-hidden flex items-center rounded-2xl py-20 md:py-28"
           style={{ background: 'linear-gradient(135deg, #0A1228 0%, #12244A 60%, #1A3060 100%)' }}
         >
           <div
             className="absolute inset-0 pointer-events-none"
-            style={{ background: 'radial-gradient(ellipse at 70% 50%, rgba(59,125,216,0.18) 0%, transparent 60%)' }}
+            style={{ background: 'radial-gradient(ellipse at 70% 50%, rgba(27,140,77,0.18) 0%, transparent 60%)' }}
           />
           <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-12 w-full">
             <nav aria-label="Breadcrumb" className="mb-6">
@@ -48,13 +48,13 @@ export default function BlogPage() {
             <div className="max-w-2xl">
               <div
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-5"
-                style={{ background: 'rgba(59,125,216,0.20)', color: '#93C5FD', border: '1px solid rgba(59,125,216,0.30)' }}
+                style={{ background: 'rgba(27,140,77,0.20)', color: '#6DCFA2', border: '1px solid rgba(27,140,77,0.30)' }}
               >
                 Ratgeber & Wissen
               </div>
               <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-4 text-white">
                 Alles rund um{' '}
-                <span style={{ color: '#60A5FA' }}>Solar & Energie</span>
+                <span style={{ color: '#35B475' }}>Solar & Energie</span>
               </h1>
               <p className="text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
                 Ratgeber, Tipps und Hintergrundwissen zu Photovoltaik, Stromspeicher und Wärmepumpen in Hamburg.
@@ -81,7 +81,7 @@ export default function BlogPage() {
               href={cat === 'Alle' ? '/blog' : `/blog/kategorie/${categorySlugMap[cat]}`}
               className="shrink-0 inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium transition-colors"
               style={{
-                border: '1px solid rgba(59,125,216,0.25)',
+                border: '1px solid rgba(27,140,77,0.25)',
                 color: '#64748B',
                 background: 'rgba(255,255,255,0.7)',
               }}
@@ -93,7 +93,7 @@ export default function BlogPage() {
       </div>
 
       {/* ── Post grid ── */}
-      <section style={{ background: '#F5F8FC' }} className="py-16">
+      <section style={{ background: '#F3F9F5' }} className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {blogPosts.map((post) => (
@@ -109,7 +109,7 @@ export default function BlogPage() {
                 <div className="flex flex-wrap items-center gap-2 mb-4">
                   <span
                     className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold"
-                    style={{ background: 'rgba(59,125,216,0.10)', color: '#3B7DD8', border: '1px solid rgba(59,125,216,0.18)' }}
+                    style={{ background: 'rgba(27,140,77,0.10)', color: '#1B8C4D', border: '1px solid rgba(27,140,77,0.18)' }}
                   >
                     {post.category}
                   </span>
@@ -132,7 +132,7 @@ export default function BlogPage() {
                   {post.excerpt}
                 </p>
 
-                <div className="flex items-center gap-1.5 text-sm font-semibold" style={{ color: '#3B7DD8' }}>
+                <div className="flex items-center gap-1.5 text-sm font-semibold" style={{ color: '#1B8C4D' }}>
                   Weiterlesen
                   <svg
                     className="w-4 h-4 transition-transform group-hover:translate-x-1"
@@ -154,7 +154,7 @@ export default function BlogPage() {
       {/* ── CTA ── */}
       <section
         className="relative overflow-hidden py-24"
-        style={{ background: 'linear-gradient(135deg, #3B7DD8 0%, #2D68C4 60%, #3B7DD8 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #1B8C4D 0%, #1B6B38 60%, #1B8C4D 100%)' }}
       >
         <div className="pointer-events-none absolute inset-0" style={{
           background: 'radial-gradient(ellipse at 30% 30%, rgba(255,255,255,0.15) 0%, transparent 55%)',
@@ -171,7 +171,7 @@ export default function BlogPage() {
             className="inline-block font-bold px-9 py-4 rounded-xl transition-all duration-200"
             style={{
               background: 'rgba(255,255,255,0.95)',
-              color: '#2D68C4',
+              color: '#1B6B38',
               boxShadow: '0 4px 24px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,1)',
             }}
           >

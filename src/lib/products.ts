@@ -64,7 +64,7 @@ export const products: Product[] = [
       'Glas-Glas Bauweise',
       'Full-Black Design',
     ],
-    image: '/images/solyco-r-bg.png',
+    image: '/images/solyco-r-bg.webp',
   },
   {
     slug: 'hems-pro',

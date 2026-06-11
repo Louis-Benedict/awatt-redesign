@@ -4,7 +4,7 @@ export default function ProductCTA({ name }: { name: string }) {
   return (
     <section
       className="relative overflow-hidden py-20"
-      style={{ background: 'linear-gradient(135deg, #3B7DD8 0%, #2D68C4 60%, #3B7DD8 100%)' }}
+      style={{ background: 'linear-gradient(135deg, #1B8C4D 0%, #1B6B38 60%, #1B8C4D 100%)' }}
     >
       <div
         className="pointer-events-none absolute inset-0"
@@ -26,7 +26,7 @@ export default function ProductCTA({ name }: { name: string }) {
             className="inline-block font-bold px-9 py-4 rounded-xl transition-all duration-200"
             style={{
               background: 'rgba(255,255,255,0.95)',
-              color: '#2D68C4',
+              color: '#1B6B38',
               boxShadow: '0 4px 24px rgba(0,0,0,0.12)',
             }}
           >

@@ -52,7 +52,7 @@ export default function ProzessSection() {
   }, []);
 
   return (
-    <section className="py-24" style={{ background: '#F5F8FC' }}>
+    <section className="py-24" style={{ background: '#F3F9F5' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
@@ -67,7 +67,7 @@ export default function ProzessSection() {
             Die Zusammenarbeit
             <span
               className="absolute bottom-0 left-0 right-0 rounded-full"
-              style={{ height: '3px', background: '#3B7DD8' }}
+              style={{ height: '3px', background: '#1B8C4D' }}
             />
           </h2>
         </div>
@@ -91,7 +91,7 @@ export default function ProzessSection() {
             <div
               style={{
                 height: '100%',
-                background: 'linear-gradient(to right, #3B7DD8, #60A5FA)',
+                background: 'linear-gradient(to right, #1B8C4D, #35B475)',
                 width: active ? '100%' : '0%',
                 transition: 'width 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.05s',
               }}
@@ -109,8 +109,8 @@ export default function ProzessSection() {
                     <div
                       className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-white"
                       style={{
-                        background: 'linear-gradient(135deg, #3B7DD8, #2563EB)',
-                        boxShadow: '0 0 0 3px #F5F8FC, 0 0 0 5px #CBD5E1',
+                        background: 'linear-gradient(135deg, #1B8C4D, #155530)',
+                        boxShadow: '0 0 0 3px #F3F9F5, 0 0 0 5px #CBD5E1',
                         transform: active ? 'scale(1)' : 'scale(0)',
                         transition: `transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) ${delay + 0.1}s`,
                       }}
@@ -133,7 +133,7 @@ export default function ProzessSection() {
                     <p className="font-bold text-sm mb-0.5" style={{ color: '#1E293B' }}>
                       Schritt {step.num}
                     </p>
-                    <p className="font-semibold mb-2" style={{ color: '#3B7DD8' }}>
+                    <p className="font-semibold mb-2" style={{ color: '#1B8C4D' }}>
                       {step.label}
                     </p>
                     <p className="text-sm leading-relaxed" style={{ color: '#64748B' }}>
@@ -164,7 +164,7 @@ export default function ProzessSection() {
             <div
               style={{
                 width: '100%',
-                background: 'linear-gradient(to bottom, #3B7DD8, #60A5FA)',
+                background: 'linear-gradient(to bottom, #1B8C4D, #35B475)',
                 height: active ? '100%' : '0%',
                 transition: 'height 1.4s cubic-bezier(0.4, 0, 0.2, 1) 0.05s',
               }}
@@ -181,8 +181,8 @@ export default function ProzessSection() {
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-white shrink-0 relative z-10"
                     style={{
-                      background: 'linear-gradient(135deg, #3B7DD8, #2563EB)',
-                      boxShadow: '0 0 0 3px #F5F8FC, 0 0 0 5px #CBD5E1',
+                      background: 'linear-gradient(135deg, #1B8C4D, #155530)',
+                      boxShadow: '0 0 0 3px #F3F9F5, 0 0 0 5px #CBD5E1',
                       transform: active ? 'scale(1)' : 'scale(0)',
                       transition: `transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) ${delay + 0.1}s`,
                     }}
@@ -205,7 +205,7 @@ export default function ProzessSection() {
                     <p className="font-bold text-sm mb-0.5" style={{ color: '#1E293B' }}>
                       Schritt {step.num}
                     </p>
-                    <p className="font-semibold mb-1.5" style={{ color: '#3B7DD8' }}>
+                    <p className="font-semibold mb-1.5" style={{ color: '#1B8C4D' }}>
                       {step.label}
                     </p>
                     <p className="text-sm leading-relaxed" style={{ color: '#64748B' }}>

@@ -9,19 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Primary — warm medium blue
+        // Primary — forest green
         brand: {
-          50:  '#EFF6FF',
-          100: '#DBEAFE',
-          200: '#BFDBFE',
-          300: '#93C5FD',
-          400: '#60A5FA',
-          500: '#3B7DD8',
-          600: '#2D68C4',
-          700: '#2054A0',
-          800: '#1A4280',
-          900: '#153364',
-          950: '#0D1F3C',
+          50:  '#EDF9F3',
+          100: '#D2F0E2',
+          200: '#A6E3C6',
+          300: '#6DCFA2',
+          400: '#35B475',
+          500: '#1B8C4D',
+          600: '#1B6B38',
+          700: '#155530',
+          800: '#104026',
+          900: '#0C2E1C',
+          950: '#071A10',
         },
         // Secondary — sage green for eco accents
         sage: {

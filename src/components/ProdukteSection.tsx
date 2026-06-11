@@ -11,14 +11,14 @@ export default function ProdukteSection() {
         <div className="text-center mb-14">
           <p
             className="text-sm font-semibold uppercase tracking-widest mb-4"
-            style={{ color: '#3B7DD8' }}
+            style={{ color: '#1B8C4D' }}
           >
             Produktübersicht
           </p>
           <h2 className="section-title text-3xl md:text-4xl">Unser Sorglospaket</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((p) => (
             <Link
               key={p.slug}
@@ -42,7 +42,7 @@ export default function ProdukteSection() {
               <div className="flex flex-col flex-1 p-6">
                 <p
                   className="text-xs font-semibold uppercase tracking-widest mb-2"
-                  style={{ color: '#3B7DD8' }}
+                  style={{ color: '#1B8C4D' }}
                 >
                   {p.category}
                 </p>
@@ -57,7 +57,7 @@ export default function ProdukteSection() {
                 </p>
                 <div
                   className="inline-flex items-center gap-1 text-sm font-semibold mt-5"
-                  style={{ color: '#3B7DD8' }}
+                  style={{ color: '#1B8C4D' }}
                 >
                   Mehr erfahren
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

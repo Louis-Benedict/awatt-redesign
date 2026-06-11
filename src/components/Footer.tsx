@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#0F172A', color: '#CBD5E1' }}>
+    <footer style={{ background: '#0C2418', color: '#CBD5E1' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
 
@@ -58,7 +58,6 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm">
               {[
                 { href: '/solarcheck', label: 'Solarcheck' },
-                { href: '/stromspeicher', label: 'Stromspeicher' },
                 { href: '/photovoltaik', label: 'PV-Anlage' },
                 { href: '/waermepumpe', label: 'Wärmepumpe' },
               ].map((link) => (

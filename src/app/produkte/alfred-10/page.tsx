@@ -59,11 +59,11 @@ export default function Alfred10Page() {
             <div className="overflow-x-auto">
               <table className="w-full min-w-[500px]">
                 <thead>
-                  <tr style={{ background: 'rgba(59,125,216,0.08)', borderBottom: '1px solid #E8EEF7' }}>
+                  <tr style={{ background: 'rgba(27,140,77,0.08)', borderBottom: '1px solid #E8EEF7' }}>
                     <th className="px-6 py-4 text-left text-sm font-bold" style={{ color: '#1E293B' }}>
                       Spezifikation
                     </th>
-                    <th className="px-6 py-4 text-left text-sm font-bold" style={{ color: '#3B7DD8' }}>
+                    <th className="px-6 py-4 text-left text-sm font-bold" style={{ color: '#1B8C4D' }}>
                       Alfred 10
                     </th>
                   </tr>
@@ -92,6 +92,22 @@ export default function Alfred10Page() {
               </table>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-12 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <a
+            href="/docs/datenblatt-alfred-10.pdf"
+            download
+            className="inline-flex items-center gap-3 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200"
+            style={{ background: '#1B6B38', color: '#fff', boxShadow: '0 4px 16px rgba(27,107,56,0.25)' }}
+          >
+            <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v12m0 0l-4-4m4 4l4-4M3 17v2a2 2 0 002 2h14a2 2 0 002-2v-2" />
+            </svg>
+            Datenblatt Alfred 10 herunterladen (PDF)
+          </a>
         </div>
       </section>
 
