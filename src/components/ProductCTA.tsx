@@ -33,7 +33,7 @@ export default function ProductCTA({ name }: { name: string }) {
             Kostenlose Beratung sichern
           </Link>
           <a
-            href="tel:+4917684412063"
+            href="tel:+4945418856891"
             className="inline-flex items-center gap-2 font-bold px-9 py-4 rounded-xl text-white transition-all duration-200"
             style={{
               background: 'rgba(255,255,255,0.15)',

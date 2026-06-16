@@ -117,7 +117,7 @@ export default function EmpfehlungsprogrammPage() {
                   Jetzt teilnehmen
                 </Link>
                 <a
-                  href="tel:+4917684412063"
+                  href="tel:+4945418856891"
                   className="inline-block font-semibold px-7 py-3 rounded-xl text-base text-white transition-all duration-200"
                   style={{
                     background: 'rgba(255,255,255,0.10)',
@@ -311,7 +311,7 @@ export default function EmpfehlungsprogrammPage() {
               Jetzt teilnehmen
             </Link>
             <a
-              href="tel:+4917684412063"
+              href="tel:+4945418856891"
               className="inline-flex items-center gap-2 font-bold px-9 py-4 rounded-xl transition-all duration-200 text-white"
               style={{
                 background: 'rgba(255,255,255,0.15)',

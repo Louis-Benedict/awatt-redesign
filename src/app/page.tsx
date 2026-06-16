@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ShieldCheck, Zap, ClipboardList, BadgeCheck, Home, Sun, ArrowRight } from 'lucide-react';
+import { ShieldCheck, Zap, ClipboardList, BadgeCheck, Home, Sun, ArrowRight, SlidersHorizontal, BatteryCharging, UserRound, PencilRuler } from 'lucide-react';
 import ProzessSection from '@/components/ProzessSection';
 import HemsSection from '@/components/HemsSection';
 import ProdukteSection from '@/components/ProdukteSection';
@@ -150,7 +150,7 @@ export default function HomePage() {
                   Kostenlose Beratung sichern
                 </Link>
                 <a
-                  href="tel:+4917684412063"
+                  href="tel:+4945418856891"
                   className="inline-block font-semibold px-7 py-3 rounded-xl text-base text-white transition-all duration-200"
                   style={{
                     background: 'rgba(255,255,255,0.10)',
@@ -244,7 +244,7 @@ export default function HomePage() {
                 PV-Hamburg
               </p>
               <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6" style={{ color: '#1E293B' }}>
-                Wir installieren Ihre Solaranlage in Hamburg
+                Wir installieren Ihre Solaranlage in Hamburg und Umgebung
               </h2>
               <p className="text-lg leading-relaxed mb-8" style={{ color: '#64748B' }}>
                 Wir sind Ihr persönlicher Solarpartner — von der Planung bis
@@ -368,9 +368,69 @@ export default function HomePage() {
             ))}
           </div>
 
-          <p className="text-center text-sm mt-10" style={{ color: 'rgba(255,255,255,0.4)' }}>
-            Wir bieten selbstverständlich auch individuelle Wunschanlagen — kontaktieren Sie uns einfach.
-          </p>
+          {/* Individuelles Paket card */}
+          <div
+            className="mt-5 rounded-xl p-6 md:p-8"
+            style={{
+              background: 'rgba(255,255,255,0.10)',
+              backdropFilter: 'blur(20px) saturate(150%)',
+              WebkitBackdropFilter: 'blur(20px) saturate(150%)',
+              border: '1px solid rgba(255,255,255,0.16)',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+            }}
+          >
+            <div className="flex flex-col md:flex-row gap-8 items-center">
+              {/* Left: icon + title + desc */}
+              <div className="flex items-start gap-4 md:w-80 shrink-0">
+                <div
+                  className="rounded-full p-3 shrink-0"
+                  style={{ background: 'rgba(255,255,255,0.10)', border: '1px solid rgba(255,255,255,0.16)' }}
+                >
+                  <PencilRuler className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-1">Individuelles Paket</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                    Nicht das passende dabei? Wir planen Ihre PV-Anlage individuell nach Dachfläche, Stromverbrauch, Speicherwunsch und Budget.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right: feature icons */}
+              <div className="flex flex-wrap gap-6 flex-1 justify-center md:justify-end">
+                {[
+                  { icon: <SlidersHorizontal className="w-6 h-6" />, label: 'Maßgeschneiderte\nPlanung' },
+                  { icon: <BatteryCharging className="w-6 h-6" />, label: 'Mit oder ohne\nSpeicher' },
+                  { icon: <Home className="w-6 h-6" />, label: 'Passend für\njedes Dach' },
+                  { icon: <UserRound className="w-6 h-6" />, label: 'Persönliche\nBeratung' },
+                ].map((f) => (
+                  <div key={f.label} className="flex flex-col items-center gap-2 text-center">
+                    <div
+                      className="rounded-full p-3"
+                      style={{ background: 'rgba(255,255,255,0.10)', border: '1px solid rgba(255,255,255,0.16)' }}
+                    >
+                      <span style={{ color: 'rgba(255,255,255,0.85)' }}>{f.icon}</span>
+                    </div>
+                    <span className="text-xs font-medium whitespace-pre-line" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                      {f.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="mt-6 flex justify-center">
+              <Link
+                href="/kontakt?betreff=individuelles-paket"
+                className="inline-flex items-center gap-2 font-bold px-8 py-3 rounded-full text-white transition-all duration-200 hover:brightness-110"
+                style={{ background: '#1B8C4D', boxShadow: '0 4px 16px rgba(27,140,77,0.4)' }}
+              >
+                Individuelles Angebot anfragen
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -445,7 +505,7 @@ export default function HomePage() {
               Kostenlose Beratung sichern
             </Link>
             <a
-              href="tel:+4917684412063"
+              href="tel:+4945418856891"
               className="inline-flex items-center gap-2 font-bold px-9 py-4 rounded-xl transition-all duration-200 text-white"
               style={{
                 background: 'rgba(255,255,255,0.15)',

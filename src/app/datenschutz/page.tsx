@@ -25,8 +25,8 @@ export default function DatenschutzPage() {
             <p>23909 Ratzeburg</p>
             <p>
               Telefon:{' '}
-              <a href="tel:+4917684412063" className="hover:text-brand-600 transition-colors">
-                0176 844 12063
+              <a href="tel:+4945418856891" className="hover:text-brand-600 transition-colors">
+                04541 8856891
               </a>
             </p>
             <p>

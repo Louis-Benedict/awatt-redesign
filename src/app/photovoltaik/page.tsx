@@ -7,7 +7,7 @@ import FaqAccordion from '@/components/FaqAccordion';
 export const metadata: Metadata = {
   title: 'PV Hamburg – PV-Anlage kaufen & installieren | PV-Hamburg',
   description:
-    'Photovoltaikanlage in Hamburg kaufen & installieren lassen. PV-Hamburg – Festpreisangebote ab 11.460 €, Netzanmeldung inklusive, 30 Jahre Modulgarantie.',
+    'Photovoltaikanlage in Hamburg kaufen & installieren lassen. PV-Hamburg – Festpreisangebote ab 13.440 €, Netzanmeldung inklusive, 30 Jahre Modulgarantie.',
 };
 
 const faqItems = [
@@ -107,8 +107,8 @@ export default function PhotovoltaikPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { value: '700+', label: 'realisierte Anlagen' },
-              { value: 'ab 11.460 €', label: 'Festpreis inkl. MwSt.' },
+              { value: '250+', label: 'realisierte Anlagen' },
+              { value: 'ab 13.440 €', label: 'Festpreis inkl. MwSt.' },
               { value: '8–12 J.', label: 'Amortisationszeit' },
               { value: '30 Jahre', label: 'Modulgarantie' },
             ].map((s) => (
@@ -230,11 +230,11 @@ export default function PhotovoltaikPage() {
               Beratungsgespräch anfragen
             </Link>
             <a
-              href="tel:+4917684412063"
+              href="tel:+4945418856891"
               className="inline-flex items-center gap-2 font-bold px-9 py-4 rounded-xl transition-all duration-200 text-white"
               style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.35)' }}
             >
-              0176 844 12063
+              04541 8856891
             </a>
           </div>
         </div>

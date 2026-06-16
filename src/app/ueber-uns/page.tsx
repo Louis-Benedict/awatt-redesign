@@ -6,21 +6,21 @@ import { Timer, UserCheck, Award, BadgeDollarSign } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Über Uns – Ihr Energieprofi aus Hamburg',
   description:
-    'Seit 2022 installieren wir Photovoltaikanlagen und Wärmepumpen in Hamburg. Über 700 zufriedene Kunden, lokales Team, Qualität und Zuverlässigkeit.',
+    'Seit 2022 installieren wir Photovoltaikanlagen und Wärmepumpen in Hamburg. Über 250 zufriedene Kunden, lokales Team, Qualität und Zuverlässigkeit.',
 };
 
 const values = [
-  { icon: <Timer           className="w-6 h-6" />, title: 'Kurze Wartezeiten',          desc: 'Von der Auftragserteilung bis zur fertig installierten Anlage in der Regel unter 4 Wochen. Wir planen effizient und halten unsere Termine ein.' },
-  { icon: <UserCheck       className="w-6 h-6" />, title: 'Persönlicher Ansprechpartner', desc: 'Sie haben immer einen festen Ansprechpartner vor Ort in Hamburg, der Sie kennt und Ihr Projekt von Anfang bis Ende begleitet.' },
-  { icon: <Award           className="w-6 h-6" />, title: 'Hochwertige Systeme',         desc: 'Wir setzen ausschließlich auf geprüfte Qualitätsprodukte führender Hersteller, die wir ausgiebig getestet und für tauglich befunden haben.' },
-  { icon: <BadgeDollarSign className="w-6 h-6" />, title: 'Bestpreisgarantie',           desc: 'Transparente Angebote ohne versteckte Kosten. Wenn Sie ein günstigeres vergleichbares Angebot finden, gehen wir mit dem Preis mit.' },
+  { icon: <Timer className="w-6 h-6" />, title: 'Kurze Wartezeiten', desc: 'Von der Auftragserteilung bis zur fertig installierten Anlage in der Regel unter 4 Wochen. Wir planen effizient und halten unsere Termine ein.' },
+  { icon: <UserCheck className="w-6 h-6" />, title: 'Persönlicher Ansprechpartner', desc: 'Sie haben immer einen festen Ansprechpartner vor Ort in Hamburg, der Sie kennt und Ihr Projekt von Anfang bis Ende begleitet.' },
+  { icon: <Award className="w-6 h-6" />, title: 'Hochwertige Systeme', desc: 'Wir setzen ausschließlich auf geprüfte Qualitätsprodukte führender Hersteller, die wir ausgiebig getestet und für tauglich befunden haben.' },
+  { icon: <BadgeDollarSign className="w-6 h-6" />, title: 'Bestpreisgarantie', desc: 'Transparente Angebote ohne versteckte Kosten. Wenn Sie ein günstigeres vergleichbares Angebot finden, gehen wir mit dem Preis mit.' },
 ];
 
 const milestones = [
   { year: '2022', event: 'Gründung des Unternehmens in Hamburg' },
-  { year: '2023', event: '250. installierte Photovoltaikanlage' },
+  { year: '2023', event: '30. installierte Photovoltaikanlage' },
   { year: '2024', event: 'Erweiterung des Portfolios um Wärmepumpen' },
-  { year: '2025', event: 'Über 700 realisierte Projekte in der Region' },
+  { year: '2025', event: 'Über 250 realisierte Projekte in der Region' },
 ];
 
 export default function UeberUnsPage() {
@@ -38,7 +38,7 @@ export default function UeberUnsPage() {
               <span className="text-brand-400">Energie</span>
             </h1>
             <p className="text-xl text-slate-300 mb-4 leading-relaxed">
-              Über 700 Anlagen – Ihre Energiezukunft beginnt mit uns.
+              Über 250 Anlagen – Ihre Energiezukunft beginnt mit uns.
             </p>
             <p className="text-slate-400 leading-relaxed">
               Seit 2022 sind wir Ihr vertrauensvoller Partner für Photovoltaik und
@@ -60,7 +60,7 @@ export default function UeberUnsPage() {
                 zuverlässig und zu fairen Konditionen.
               </p>
               <p className="text-slate-600 leading-relaxed mb-4">
-                Seitdem haben wir über 700 Photovoltaikanlagen und Wärmepumpen installiert
+                Seitdem haben wir über 250 Photovoltaikanlagen und Wärmepumpen installiert
                 und dabei stets auf Qualität, Zuverlässigkeit und maßgeschneiderte
                 Energielösungen gesetzt.
               </p>

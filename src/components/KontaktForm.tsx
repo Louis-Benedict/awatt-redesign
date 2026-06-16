@@ -20,6 +20,7 @@ export default function KontaktForm({ defaultBetreff = '' }: { defaultBetreff?: 
             <option value="paket-m">Paket M</option>
             <option value="paket-l">Paket L</option>
             <option value="paket-xl">Paket XL</option>
+            <option value="individuelles-paket">Individuelles Paket</option>
           </optgroup>
           <optgroup label="Allgemein">
             <option value="photovoltaik">Photovoltaik</option>

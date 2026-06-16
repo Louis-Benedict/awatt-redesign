@@ -61,8 +61,8 @@ export default async function KontaktPage({
                   </div>
                   <div>
                     <div className="font-semibold text-slate-900">Telefon</div>
-                    <a href="tel:+4917684412063" className="text-brand-600 text-sm mt-0.5 hover:underline block">
-                      0176 844 12063
+                    <a href="tel:+4945418856891" className="text-brand-600 text-sm mt-0.5 hover:underline block">
+                      04541 8856891
                     </a>
                   </div>
                 </div>
