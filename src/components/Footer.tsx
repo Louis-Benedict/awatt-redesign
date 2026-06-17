@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -10,13 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="mb-5">
-              <Image
-                src="/logo.png"
-                alt="PV Hamburg"
-                width={64}
-                height={64}
-                className="h-14 w-auto"
-              />
+              <span className="text-xl font-bold tracking-tight" style={{ color: '#E2E8F0' }}>PV-Hamburg</span>
             </div>
             <p className="text-sm leading-relaxed" style={{ color: '#64748B' }}>
               Ihr regionaler Partner für Photovoltaik und Wärmepumpen in Hamburg und Umgebung.
