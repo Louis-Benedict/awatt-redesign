@@ -116,21 +116,6 @@ export default function HomePage() {
           <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-12 py-24 w-full">
             <div className="max-w-2xl">
 
-              {/* Glass badge */}
-              <div
-                className="inline-flex items-center gap-3 px-4 py-2.5 rounded-xl mb-10"
-                style={{
-                  background: 'rgba(255,255,255,0.10)',
-                  backdropFilter: 'blur(16px)',
-                  WebkitBackdropFilter: 'blur(16px)',
-                  border: '1px solid rgba(255,255,255,0.18)',
-                }}
-              >
-                <Image src="/logo.png" alt="PV Hamburg" width={32} height={32} className="h-8 w-auto" priority />
-                <span className="text-sm font-medium text-white/80">
-                  PV Hamburg
-                </span>
-              </div>
 
               <h1 className="text-4xl md:text-5xl font-bold leading-[1.06] mb-5 text-white">
                 Jetzt effizient{' '}
