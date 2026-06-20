@@ -1,8 +1,33 @@
 'use client';
 
+import { useState } from 'react';
+
 export default function KontaktForm({ defaultBetreff = '' }: { defaultBetreff?: string }) {
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus('loading');
+
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form));
+
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+
+    if (res.ok) {
+      setStatus('success');
+      form.reset();
+    } else {
+      setStatus('error');
+    }
+  }
+
   return (
-    <form className="space-y-5">
+    <form className="space-y-5" onSubmit={handleSubmit}>
       {/* Betreff */}
       <div>
         <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-1.5">
@@ -12,6 +37,7 @@ export default function KontaktForm({ defaultBetreff = '' }: { defaultBetreff?: 
           id="subject"
           name="subject"
           defaultValue={defaultBetreff}
+          required
           className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
         >
           <option value="">Bitte wählen…</option>
@@ -40,6 +66,7 @@ export default function KontaktForm({ defaultBetreff = '' }: { defaultBetreff?: 
             type="text"
             id="firstName"
             name="firstName"
+            required
             className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
             placeholder="Max"
           />
@@ -52,6 +79,7 @@ export default function KontaktForm({ defaultBetreff = '' }: { defaultBetreff?: 
             type="text"
             id="lastName"
             name="lastName"
+            required
             className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
             placeholder="Mustermann"
           />
@@ -67,6 +95,7 @@ export default function KontaktForm({ defaultBetreff = '' }: { defaultBetreff?: 
           type="email"
           id="email"
           name="email"
+          required
           className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
           placeholder="max@beispiel.de"
         />
@@ -95,6 +124,7 @@ export default function KontaktForm({ defaultBetreff = '' }: { defaultBetreff?: 
           id="message"
           name="message"
           rows={5}
+          required
           className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent resize-none"
           placeholder="Schildern Sie Ihr Vorhaben oder stellen Sie Ihre Fragen…"
         />
@@ -106,6 +136,7 @@ export default function KontaktForm({ defaultBetreff = '' }: { defaultBetreff?: 
           type="checkbox"
           id="privacy"
           name="privacy"
+          required
           className="mt-0.5 w-4 h-4 accent-brand-500"
         />
         <label htmlFor="privacy" className="text-sm text-slate-600">
@@ -117,8 +148,23 @@ export default function KontaktForm({ defaultBetreff = '' }: { defaultBetreff?: 
         </label>
       </div>
 
-      <button type="submit" className="btn-primary w-full text-center">
-        Nachricht senden
+      {status === 'success' && (
+        <p className="text-sm text-green-600 font-medium">
+          Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.
+        </p>
+      )}
+      {status === 'error' && (
+        <p className="text-sm text-red-600 font-medium">
+          Leider ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an anfrage@pv-hh.de.
+        </p>
+      )}
+
+      <button
+        type="submit"
+        disabled={status === 'loading'}
+        className="btn-primary w-full text-center disabled:opacity-60 disabled:cursor-not-allowed"
+      >
+        {status === 'loading' ? 'Wird gesendet…' : 'Nachricht senden'}
       </button>
     </form>
   );
