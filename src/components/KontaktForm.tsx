@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { reportConversion, CONVERSIONS } from '@/lib/gtag';
 
 export default function KontaktForm({ defaultBetreff = '' }: { defaultBetreff?: string }) {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -21,6 +22,8 @@ export default function KontaktForm({ defaultBetreff = '' }: { defaultBetreff?: 
     if (res.ok) {
       setStatus('success');
       form.reset();
+      // Google Ads: Conversion melden – nur bei wirklich erfolgreichem Versand
+      reportConversion(CONVERSIONS.kontaktformular);
     } else {
       setStatus('error');
     }
