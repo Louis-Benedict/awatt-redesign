@@ -8,6 +8,8 @@ export const GADS_ID = 'AW-18269096496';
 // Neue Conversions (Telefon, Solarcheck, ...) kommen später einfach hier dazu.
 export const CONVERSIONS = {
   kontaktformular: '4aisCK256cQcELCUsYdE',
+  telefon: 'jtk7CJqW3sUcELCUsYdE',
+  email: '4VUgCPivyMUcELCUsYdE',
 } as const;
 
 // gtag global für TypeScript bekannt machen (sonst meckert der Compiler)
