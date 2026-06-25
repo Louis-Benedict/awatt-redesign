@@ -4,6 +4,7 @@ import Script from 'next/script';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
+import ClickTracker from '@/components/ClickTracker';
 import { GADS_ID } from '@/lib/gtag';
 import './globals.css';
 
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="flex-1">{children}</main>
         <Footer />
         <CookieBanner />
+        <ClickTracker />
       </body>
     </html>
   );
