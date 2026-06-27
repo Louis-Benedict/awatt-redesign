@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
+import ClickTracker from '@/components/ClickTracker';
+import { GADS_ID } from '@/lib/gtag';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
@@ -21,10 +24,49 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="de" className={inter.variable}>
       <body className="flex flex-col min-h-screen">
+        {/* 1. Google Consent Mode v2 – Standard: alles abgelehnt, bis der Nutzer zustimmt */}
+        <Script id="consent-default" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+              analytics_storage: 'denied',
+              wait_for_update: 500
+            });
+            try {
+              if (localStorage.getItem('cookie-consent') === 'accepted') {
+                gtag('consent', 'update', {
+                  ad_storage: 'granted',
+                  ad_user_data: 'granted',
+                  ad_personalization: 'granted',
+                  analytics_storage: 'granted'
+                });
+              }
+            } catch (e) {}
+          `}
+        </Script>
+
+        {/* 2. Google-Tag laden */}
+        <Script
+          id="gtag-base"
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GADS_ID}`}
+        />
+        <Script id="gtag-config" strategy="afterInteractive">
+          {`
+            gtag('js', new Date());
+            gtag('config', '${GADS_ID}');
+          `}
+        </Script>
+
         <Navigation />
         <main className="flex-1">{children}</main>
         <Footer />
         <CookieBanner />
+        <ClickTracker />
       </body>
     </html>
   );

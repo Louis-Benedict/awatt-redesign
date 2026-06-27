@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { grantConsent, denyConsent } from '@/lib/gtag';
 
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
@@ -14,11 +15,13 @@ export default function CookieBanner() {
 
   function accept() {
     localStorage.setItem('cookie-consent', 'accepted');
+    grantConsent();
     setVisible(false);
   }
 
   function decline() {
     localStorage.setItem('cookie-consent', 'declined');
+    denyConsent();
     setVisible(false);
   }
 
