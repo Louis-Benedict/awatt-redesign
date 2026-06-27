@@ -10,6 +10,7 @@ export const CONVERSIONS = {
   kontaktformular: '4aisCK256cQcELCUsYdE',
   telefon: 'jtk7CJqW3sUcELCUsYdE',
   email: '4VUgCPivyMUcELCUsYdE',
+  solarcheck: 'SOLARCHECK_CONVERSION_LABEL',
 } as const;
 
 // gtag global für TypeScript bekannt machen (sonst meckert der Compiler)
