@@ -2,15 +2,15 @@
 // Alles, was mit Conversion-Tracking zu tun hat, liegt hier an einer Stelle.
 
 // Konto-Tag-ID (ist für ALLE Conversions dieses Kontos gleich)
-export const GADS_ID = 'AW-18269096496';
+export const GADS_ID = 'AW-18245381381';
 
 // Conversion-Labels (pro Conversion-Aktion eine eigene)
 // Neue Conversions (Telefon, Solarcheck, ...) kommen später einfach hier dazu.
 export const CONVERSIONS = {
-  kontaktformular: '4aisCK256cQcELCUsYdE',
-  telefon: 'jtk7CJqW3sUcELCUsYdE',
-  email: '4VUgCPivyMUcELCUsYdE',
-  solarcheck: 'SOLARCHECK_CONVERSION_LABEL',
+  kontaktformular: 'K8OeCM6Bu80cEIXaifxD',
+  telefon: 'id1zCMzpo80cEIXaifxD',
+  email: 'TamnCNWBpM0cEIXaifxD',
+  solarcheck: 'NOcjCLjPo80cEIXaifxD',
 } as const;
 
 // gtag global für TypeScript bekannt machen (sonst meckert der Compiler)
