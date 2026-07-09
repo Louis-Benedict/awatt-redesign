@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     q: 'Was kostet eine Photovoltaikanlage in Hamburg?',
-    a: 'Je nach Größe und Ausstattung liegen unsere Pakete zwischen 11.460 € und 14.100 €. Der genaue Preis hängt von Ihrer Dachfläche, dem Modultyp und möglichen Zusatzkomponenten wie Speicher oder Wallbox ab. Wir erstellen Ihnen ein transparentes Festpreisangebot.',
+    a: 'Je nach Größe und Ausstattung liegen unsere Pakete zwischen 13.440 € und 18.500 €. Der genaue Preis hängt von Ihrer Dachfläche, dem Modultyp und möglichen Zusatzkomponenten wie Speicher oder Wallbox ab. Wir erstellen Ihnen ein transparentes Festpreisangebot.',
   },
   {
     q: 'Wie lange dauert die Installation?',

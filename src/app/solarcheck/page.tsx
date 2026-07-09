@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { Zap, Lock, Phone } from 'lucide-react';
 import FaqAccordion from '@/components/FaqAccordion';
+import SolarcheckForm from '@/components/SolarcheckForm';
 
 export const metadata: Metadata = {
   title: 'Kostenloser Solarcheck – Potenzial Ihres Dachs ermitteln',
@@ -91,74 +91,7 @@ export default function SolarcheckPage() {
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="card shadow-lg">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">Solarcheck starten</h2>
-            <form className="space-y-5">
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1.5">
-                  Geschätzte Dachfläche (m²)
-                </label>
-                <input
-                  type="number"
-                  className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"
-                  placeholder="z. B. 40"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1.5">
-                  Ausrichtung des Dachs
-                </label>
-                <select className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
-                  <option value="">Bitte wählen…</option>
-                  <option>Süd</option>
-                  <option>Südwest / Südost</option>
-                  <option>West / Ost</option>
-                  <option>Nord</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1.5">
-                  Jährlicher Stromverbrauch (kWh)
-                </label>
-                <input
-                  type="number"
-                  className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"
-                  placeholder="z. B. 4000"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1.5">
-                  Postleitzahl
-                </label>
-                <input
-                  type="text"
-                  className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"
-                  placeholder="z. B. 22113"
-                  maxLength={5}
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1.5">
-                  Ihre E-Mail-Adresse
-                </label>
-                <input
-                  type="email"
-                  className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"
-                  placeholder="max@beispiel.de"
-                />
-              </div>
-              <div className="flex items-start gap-3">
-                <input type="checkbox" className="mt-0.5 w-4 h-4 accent-brand-500" />
-                <label className="text-sm text-slate-600">
-                  Ich stimme der{' '}
-                  <Link href="/datenschutz" className="text-brand-600 hover:underline">
-                    Datenschutzerklärung
-                  </Link>{' '}
-                  zu.
-                </label>
-              </div>
-              <button type="submit" className="btn-primary w-full text-center">
-                Solarcheck starten
-              </button>
-            </form>
+            <SolarcheckForm />
           </div>
         </div>
       </section>
