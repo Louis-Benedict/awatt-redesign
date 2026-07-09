@@ -44,6 +44,13 @@ export default function Navigation() {
   }, []);
 
   useEffect(() => {
+    // Nur fuer die Desktop-Dropdowns. Solange das Mobile-Menue offen ist, darf dieser
+    // Handler nicht laufen: Die Refs zeigen auf das (per CSS versteckte, aber im DOM
+    // vorhandene) Desktop-Menue. Ein Tipp auf einen Mobile-Untermenue-Link gilt daher
+    // als "Klick ausserhalb", schliesst das Untermenue und entfernt den Link, bevor
+    // der Klick ihn erreicht -> keine Weiterleitung.
+    if (isOpen) return;
+
     const handleClickOutside = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setLeistungenOpen(false);
@@ -54,7 +61,7 @@ export default function Navigation() {
     };
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+  }, [isOpen]);
 
   const leistungenActive = leistungenHrefs.has(pathname);
   const produkteActive = produkteHrefs.has(pathname);
