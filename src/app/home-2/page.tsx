@@ -79,9 +79,13 @@ export default function Home2Page() {
             loop
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
-            src="https://video.wixstatic.com/video/b34a89_c42f8363f5c14beeb0c9e57dd8826f73/720p/mp4/file.mp4"
             poster="https://static.wixstatic.com/media/b34a89_c42f8363f5c14beeb0c9e57dd8826f73f000.jpg"
-          />
+          >
+            <source src="/videos/hero-mobile.webm" type="video/webm" media="(max-width: 768px)" />
+            <source src="/videos/hero-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+            <source src="/videos/hero.webm" type="video/webm" />
+            <source src="/videos/hero.mp4" type="video/mp4" />
+          </video>
 
           {/* Dark gradient overlay */}
           <div
