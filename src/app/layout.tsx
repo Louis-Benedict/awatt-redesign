@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   description:
     'Ihr regionaler Partner für Photovoltaik-Anlagen und Wärmepumpen in Hamburg und Umgebung. Kompetente Beratung, professionelle Installation, hochwertige Qualität.',
   keywords: ['Photovoltaik Hamburg', 'Solaranlage Hamburg', 'Wärmepumpe Hamburg', 'PV-Anlage'],
+  icons: {
+    icon: '/favicon.png',
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

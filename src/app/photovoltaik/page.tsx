@@ -7,13 +7,13 @@ import FaqAccordion from '@/components/FaqAccordion';
 export const metadata: Metadata = {
   title: 'PV Hamburg – PV-Anlage kaufen & installieren | PV-Hamburg',
   description:
-    'Photovoltaikanlage in Hamburg kaufen & installieren lassen. PV-Hamburg – Festpreisangebote ab 13.440 €, Netzanmeldung inklusive, 30 Jahre Modulgarantie.',
+    'Photovoltaikanlage in Hamburg kaufen & installieren lassen. PV-Hamburg – Festpreisangebote ab 10.140 €, Netzanmeldung inklusive, 30 Jahre Modulgarantie.',
 };
 
 const faqItems = [
   {
     q: 'Was kostet eine Photovoltaikanlage in Hamburg?',
-    a: 'Je nach Größe und Ausstattung liegen unsere Pakete zwischen 13.440 € und 18.500 €. Der genaue Preis hängt von Ihrer Dachfläche, dem Modultyp und möglichen Zusatzkomponenten wie Speicher oder Wallbox ab. Wir erstellen Ihnen ein transparentes Festpreisangebot.',
+    a: 'Je nach Größe und Ausstattung liegen unsere Pakete zwischen 10.140 € und 14.000 €. Der genaue Preis hängt von Ihrer Dachfläche, dem Modultyp und möglichen Zusatzkomponenten wie Speicher oder Wallbox ab. Wir erstellen Ihnen ein transparentes Festpreisangebot.',
   },
   {
     q: 'Wie lange dauert die Installation?',
@@ -108,7 +108,7 @@ export default function PhotovoltaikPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
               { value: '250+', label: 'realisierte Anlagen' },
-              { value: 'ab 13.440 €', label: 'Festpreis inkl. MwSt.' },
+              { value: 'ab 10.140 €', label: 'Festpreis inkl. MwSt.' },
               { value: '8–12 J.', label: 'Amortisationszeit' },
               { value: '30 Jahre', label: 'Modulgarantie' },
             ].map((s) => (
